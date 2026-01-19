@@ -1,0 +1,45 @@
+# Path: pyproject.toml
+[tool.poetry]
+name = "anki-vibe"
+version = "0.1.0"
+description = "A powerful middleware to manage Anki profiles and decks via code."
+authors = ["Your Name <your.email@example.com>"]
+readme = "README.md"
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+typer = {extras = ["all"], version = "^0.9.0"}  # CLI Framework
+pydantic = "^2.5.0"                              # Data Validation
+pydantic-settings = "^2.1.0"                     # Settings Management
+pyyaml = "^6.0"                                  # YAML processing
+requests = "^2.31.0"                             # HTTP Client for AnkiConnect
+rich = "^13.7.0"                                 # Beautiful Terminal Output
+jinja2 = "^3.1.0"                                # Template Engine for HTML
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.11.0"       # Code Formatter
+ruff = "^0.1.6"          # Fast Linter
+mypy = "^1.7.0"          # Type Checker
+types-pyyaml = "^6.0.12.12"
+types-requests = "^2.31.0.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+# --- Tool Configurations ---
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "I"] # Enable Pyflakes, pycodestyle, and isort
+ignore = []
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+ignore_missing_imports = true

@@ -1,0 +1,24 @@
+# Path: .gitignore
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# Environment Variables
+.env
+
+# IDEs
+.vscode/
+.idea/
+
+# Anki Data (Local testing)
+*.apkg
+*.colpkg
+
+# System
+.DS_Store
