@@ -19,6 +19,7 @@ from ruamel.yaml import YAML
 from ruamel.yaml.scalarstring import PreservedScalarString
 
 from src.core.config import settings
+from src.core.project_config import ProjectConfig
 from src.adapters import AnkiConnectAdapter
 from src.utils.text_utils import sanitize_filename
 
@@ -43,6 +44,41 @@ class PullService:
         yaml.indent(mapping=2, sequence=4, offset=2)
         yaml.width = 4096
         return yaml
+
+    def pull_project(self, config: ProjectConfig) -> None:
+        """
+        Pull dữ liệu dựa trên cấu hình Project (anki-vibe.toml).
+        """
+        self.console.print(f"Syncing Project: [bold cyan]{config.project.name}[/bold cyan]")
+        
+        with Progress(
+            SpinnerColumn(),
+            TextColumn("[progress.description]{task.description}"),
+            BarColumn(),
+            TextColumn("{task.percentage:>3.0f}%"),
+            console=self.console
+        ) as progress:
+            main_task = progress.add_task("Syncing Targets...", total=len(config.targets))
+            
+            for target in config.targets:
+                progress.update(main_task, description=f"Target: {target.name}")
+                
+                try:
+                    target_dir = config.resolve_folder(target)
+                    target_dir.mkdir(parents=True, exist_ok=True)
+                    
+                    # 1. Save Metadata (Model Templates/CSS)
+                    # Lưu ý: Mỗi target dùng 1 model, ta lưu metadata model đó vào folder target luôn
+                    self._save_model_metadata(target.model, target_dir)
+                    
+                    # 2. Save Notes (Query)
+                    self._save_notes_by_query(target.query, target_dir)
+                    
+                except Exception as e:
+                    self.console.print(f"[red]Failed target '{target.name}': {e}[/red]")
+                    logger.error(f"Failed target {target.name}: {e}")
+                
+                progress.advance(main_task)
 
     def pull_all_models(self) -> None:
         """
@@ -180,15 +216,20 @@ class PullService:
             logger.warning(f"Could not save templates for {model_name}: {e}")
 
     def _save_model_notes(self, model_name: str, model_dir: Path) -> None:
-        yaml = self._create_yaml_dumper()
-
+        # Legacy: Pull toàn bộ notes của model
         escaped_model_name = model_name.replace('"', '\\"')
-        note_ids = self.adapter.find_notes(f'note:"{escaped_model_name}"')
+        query = f'note:"{escaped_model_name}"'
+        self._save_notes_by_query(query, model_dir)
+
+    def _save_notes_by_query(self, query: str, target_dir: Path) -> None:
+        yaml = self._create_yaml_dumper()
+        
+        note_ids = self.adapter.find_notes(query)
         
         if not note_ids:
-            # Nếu model không có note nào, ta vẫn để folder nhưng có thể xóa file notes.yaml cũ nếu có
-            if (model_dir / "notes.yaml").exists():
-                (model_dir / "notes.yaml").unlink()
+            # Nếu không có note nào khớp query, ta xóa file notes.yaml nếu có
+            if (target_dir / "notes.yaml").exists():
+                (target_dir / "notes.yaml").unlink()
             return
 
         notes_info = self.adapter.get_notes_info(note_ids)
@@ -234,5 +275,5 @@ class PullService:
             yaml_notes.append(note_entry)
 
         if yaml_notes:
-            with open(model_dir / "notes.yaml", "w", encoding="utf-8") as f:
+            with open(target_dir / "notes.yaml", "w", encoding="utf-8") as f:
                 yaml.dump(yaml_notes, f)

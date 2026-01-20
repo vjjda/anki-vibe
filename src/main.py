@@ -4,12 +4,14 @@ import logging
 import typer
 from rich.console import Console
 from typing import Optional
+from pathlib import Path
 from src.core.config import settings
 from src.core.anki_detector import detect_active_profile
 from src.core.logging_config import setup_logging
 from src.services.pull_service import PullService
 from src.services.sync_service import SyncService 
 from src.adapters import AnkiConnectAdapter
+from src.core.project_config import find_project_config, load_project_config
 
 # Khởi tạo Logger cho module này
 logger = logging.getLogger(__name__)
@@ -56,7 +58,23 @@ def _resolve_profile(profile_arg: Optional[str], yes: bool = False) -> str:
 
 # --- Commands ---
 
-
+@app.command()
+def init(
+    name: str = typer.Option("My Project", "--name", "-n", help="Project name"),
+    path: Path = typer.Option(Path("."), "--path", help="Directory to init"),
+    profile: str = typer.Option("", "--profile", "-p", help="Anki profile name"),
+    verbose: bool = typer.Option(False, "--verbose", "-v")
+):
+    """Initialize a new Anki Vibe project in the current directory."""
+    _initialize_app(verbose)
+    from src.services.init_service import InitService
+    
+    # Resolve path
+    target_path = path.resolve()
+    target_path.mkdir(parents=True, exist_ok=True)
+    
+    service = InitService()
+    service.create_project(target_path, name, profile)
 
 @app.command()
 def pull(
@@ -65,16 +83,37 @@ def pull(
     yes: bool = typer.Option(False, "--yes", "-y", help="Skip confirmations"),
     verbose: bool = typer.Option(False, "--verbose", "-v")
 ) -> None:
-    """[PULL] Fetch all models, templates, and notes from Anki."""
+    """[PULL] Fetch data from Anki. Auto-detects project config or uses --profile."""
     _initialize_app(verbose)
     
-    # 1. Resolve Profile
+    # 1. Check for Project Config (Project Mode)
+    config_path = find_project_config()
+    
+    if config_path and not profile:
+        console.print(f"[bold cyan]📂 Found project config at: {config_path}[/bold cyan]")
+        try:
+            config = load_project_config(config_path)
+            target_profile = config.project.anki_profile or _resolve_profile(None, yes=yes)
+            
+            console.print(f"[bold green]⬇️  Starting Pull for Project: {config.project.name} (Profile: {target_profile})[/bold green]")
+            
+            adapter = AnkiConnectAdapter()
+            service = PullService(target_profile, adapter)
+            service.pull_project(config)
+            
+            console.print(f"\n[bold green]✅ Project Pull completed![/bold green]")
+            return
+        except Exception as e:
+            console.print(f"[bold red]❌ Failed to load project config:[/bold red] {e}")
+            raise typer.Exit(code=1)
+
+    # 2. Legacy Mode (Monorepo)
     try:
         target_profile = _resolve_profile(profile, yes=yes)
     except Exception:
         return
 
-    # 2. Safety Check
+    # Safety Check
     console.print(f"\n[bold yellow]⚠️  CRITICAL WARNING:[/bold yellow]")
     console.print(f"This will pull ALL data from profile '[bold]{target_profile}[/bold]' into [bold]{settings.ANKI_DATA_DIR}/{target_profile}[/bold].")
     console.print("Existing files (notes.yaml, templates) may be overwritten.")
@@ -83,14 +122,11 @@ def pull(
         if not typer.confirm("Are you sure you want to proceed?"):
             raise typer.Exit()
 
-    # 3. Execute Pull Service
+    # Execute Pull Service
     console.print(f"[bold green]⬇️  Starting Pull for {target_profile}...[/bold green]")
     
     try:
-        # Load profile trên Anki trước (nếu chưa đúng)
         adapter = AnkiConnectAdapter()
-        # adapter.load_profile(target_profile) # Cẩn thận: Load profile sẽ restart Anki gui sync.
-        
         service = PullService(target_profile, adapter)
         service.pull_all_models()
         
@@ -134,11 +170,42 @@ def sync(
     yes: bool = typer.Option(False, "--yes", "-y", help="Skip confirmations"),
     verbose: bool = typer.Option(False, "--verbose", "-v", help="Enable debug logs")
 ) -> None:
-    """[PUSH] Sync data from local YAML files to Anki (Create & Update)."""
+    """[PUSH] Sync data to Anki. Auto-detects project config or uses --profile."""
     _initialize_app(verbose)
     console.print(f"[bold blue]🚀 Starting Anki-Vibe Sync (Push)[/bold blue]")
     
-    # 1. Resolve Profile
+    # 1. Check for Project Config (Project Mode)
+    config_path = find_project_config()
+    
+    if config_path and not profile:
+        console.print(f"[bold cyan]📂 Found project config at: {config_path}[/bold cyan]")
+        try:
+            config = load_project_config(config_path)
+            target_profile = config.project.anki_profile or _resolve_profile(None, yes=yes)
+            
+            # DB Path local cho project
+            project_db_path = config_path.parent / ".anki_vibe.db"
+            
+            if not dry_run:
+                if not yes and not typer.confirm(f"Push changes for project '{config.project.name}' to profile '{target_profile}'?"):
+                    raise typer.Exit()
+            
+            adapter = AnkiConnectAdapter()
+            service = SyncService(target_profile, adapter, db_path=project_db_path)
+            
+            if dry_run:
+                console.print("[yellow]Dry run is not fully implemented yet.[/yellow]")
+            else:
+                service.push_project(config)
+                console.print(f"\n[bold green]✅ Project Sync completed![/bold green]")
+            return
+            
+        except Exception as e:
+            logger.exception("Project Sync failed")
+            console.print(f"[bold red]❌ Error during project sync:[/bold red] {e}")
+            raise typer.Exit(code=1)
+
+    # 2. Legacy Mode (Monorepo)
     try:
         target_profile = _resolve_profile(profile, yes=yes)
     except Exception:
@@ -146,16 +213,13 @@ def sync(
 
     console.print(f"Targeting: [green]{target_profile}[/green]")
     
-    # 2. Confirm
     if not dry_run:
-         # Một chút an toàn: confirm trước khi push
         if not yes and not typer.confirm(f"Do you want to push changes to Anki profile '{target_profile}'?"):
              raise typer.Exit()
 
-    # 3. Execute
     try:
         adapter = AnkiConnectAdapter()
-        service = SyncService(target_profile, adapter)
+        service = SyncService(target_profile, adapter) # Legacy: tự detect db path
         
         if dry_run:
             console.print("[yellow]Dry run is not fully implemented yet. Skipping execution.[/yellow]")
