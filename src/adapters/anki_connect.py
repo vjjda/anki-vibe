@@ -160,3 +160,66 @@ class AnkiConnectAdapter:
         if not card_ids:
             return []
         return self._invoke("cardsInfo", cards=card_ids)
+    
+    # =========================================================================
+    # BATCH OPERATIONS (Performance Optimization)
+    # =========================================================================
+
+    def multi(self, actions: List[Dict[str, Any]]) -> List[Any]:
+        """
+        Thực thi hàng loạt action trong 1 HTTP Request.
+        Tăng tốc độ sync đáng kể so với gửi lẻ tẻ.
+        """
+        return self._invoke("multi", actions=actions)
+
+    def add_notes(self, notes: List[Dict[str, Any]]) -> List[Optional[int]]:
+        """
+        Thêm nhiều ghi chú cùng lúc (Bulk Insert).
+        Returns: List các Note ID vừa tạo (theo thứ tự input).
+        """
+        return self._invoke("addNotes", notes=notes)
+
+    # =========================================================================
+    # MODEL MODIFICATION
+    # =========================================================================
+
+    def update_model_templates(self, model_name: str, templates: Dict[str, Dict[str, str]]) -> None:
+        """
+        Cập nhật HTML Template cho Model.
+        templates structure: { "Card 1": {"Front": "..", "Back": ".."} }
+        """
+        # API requires specific structure: model, templates={cardName: {Front:.., Back:..}}
+        self._invoke("updateModelTemplates", model={"name": model_name, "templates": templates})
+
+    def update_model_styling(self, model_name: str, css: str) -> None:
+        """Cập nhật CSS cho Model."""
+        self._invoke("updateModelStyling", model={"name": model_name, "css": css})
+
+    # =========================================================================
+    # NOTE MODIFICATION
+    # =========================================================================
+
+    def update_note_fields(self, note_id: int, fields: Dict[str, str]) -> None:
+        """Cập nhật nội dung fields."""
+        note = {"id": note_id, "fields": fields}
+        self._invoke("updateNoteFields", note=note)
+
+    # Helper function to construct an action for 'multi' batch
+    @staticmethod
+    def create_update_fields_action(note_id: int, fields: Dict[str, str]) -> Dict[str, Any]:
+        return {
+            "action": "updateNoteFields",
+            "params": {"note": {"id": note_id, "fields": fields}}
+        }
+    
+    @staticmethod
+    def create_update_tags_action(note_id: int, tags: List[str]) -> Dict[str, Any]:
+        # AnkiConnect không có updateTags trực tiếp thay thế toàn bộ, 
+        # nhưng có removeTags và addTags.
+        # Tuy nhiên, để đơn giản trong batch, ta dùng updateNoteTags nếu có, 
+        # hoặc dùng 'notesInfo' để diff rồi add/remove.
+        # Hiện tại API 'updateNoteTags' nhận list tags mới thay thế list cũ.
+        return {
+            "action": "updateNoteTags",
+            "params": {"note": note_id, "tags": tags}
+        }
