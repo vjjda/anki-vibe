@@ -8,6 +8,7 @@ from src.core.config import settings
 from src.core.anki_detector import detect_active_profile
 from src.core.logging_config import setup_logging
 from src.services.pull_service import PullService
+from src.services.sync_service import SyncService 
 from src.adapters import AnkiConnectAdapter
 
 # Khởi tạo Logger cho module này
@@ -28,7 +29,7 @@ def _initialize_app(verbose: bool) -> None:
     setup_logging(log_level)
     logger.debug(f"App initialized with log level: {log_level}")
 
-def _resolve_profile(profile_arg: Optional[str]) -> str:
+def _resolve_profile(profile_arg: Optional[str], yes: bool = False) -> str:
     """Helper to resolve profile from argument or auto-detection."""
     target_profile = profile_arg
     
@@ -48,37 +49,20 @@ def _resolve_profile(profile_arg: Optional[str]) -> str:
         detected = detect_active_profile()
         if detected and detected != target_profile:
             console.print(f"[bold yellow]⚠️  WARNING: You are targeting '{target_profile}' but Anki is running '{detected}'[/bold yellow]")
-            if not typer.confirm("Do you want to continue?"):
+            if not yes and not typer.confirm("Do you want to continue?"):
                 raise typer.Exit()
     
     return target_profile
 
 # --- Commands ---
 
-@app.command()
-def sync(
-    profile: Optional[str] = typer.Option(None, "--profile", "-p"),
-    dry_run: bool = typer.Option(False, "--dry-run"),
-    verbose: bool = typer.Option(False, "--verbose", "-v", help="Enable debug logs")
-) -> None:
-    """[PUSH] Sync data from local YAML files to Anki."""
-    _initialize_app(verbose)
-    console.print(f"[bold blue]🚀 Starting Anki-Vibe Sync (Push)[/bold blue]")
-    
-    target_profile = _resolve_profile(profile)
-    logger.info(f"Targeting Profile: {target_profile}")
-    logger.info(f"Data Directory: {settings.DATA_DIR}")
-    
-    if dry_run:
-        console.print("[yellow]⚠️  DRY RUN MODE: No changes will be made to Anki.[/yellow]")
-    
-    # TODO: Implement Push Logic
-    logger.warning("Push logic implementation coming soon...")
+
 
 @app.command()
 def pull(
     profile: Optional[str] = typer.Option(None, "--profile", "-p"),
     force: bool = typer.Option(False, "--force"),
+    yes: bool = typer.Option(False, "--yes", "-y", help="Skip confirmations"),
     verbose: bool = typer.Option(False, "--verbose", "-v")
 ) -> None:
     """[PULL] Fetch all models, templates, and notes from Anki."""
@@ -86,7 +70,7 @@ def pull(
     
     # 1. Resolve Profile
     try:
-        target_profile = _resolve_profile(profile)
+        target_profile = _resolve_profile(profile, yes=yes)
     except Exception:
         return
 
@@ -95,7 +79,7 @@ def pull(
     console.print(f"This will pull ALL data from profile '[bold]{target_profile}[/bold]' into [bold]{settings.DATA_DIR}/{target_profile}[/bold].")
     console.print("Existing files (notes.yaml, templates) may be overwritten.")
     
-    if not force:
+    if not force and not yes:
         if not typer.confirm("Are you sure you want to proceed?"):
             raise typer.Exit()
 
@@ -142,6 +126,46 @@ def info(
     except Exception as e:
         logger.exception("Failed to connect to Anki") # Log full traceback to file
         console.print(f"❌ [bold red]Error:[/bold red] {e}")
+
+@app.command()
+def sync(
+    profile: Optional[str] = typer.Option(None, "--profile", "-p"),
+    dry_run: bool = typer.Option(False, "--dry-run", help="Simulate without pushing to Anki"),
+    yes: bool = typer.Option(False, "--yes", "-y", help="Skip confirmations"),
+    verbose: bool = typer.Option(False, "--verbose", "-v", help="Enable debug logs")
+) -> None:
+    """[PUSH] Sync data from local YAML files to Anki (Create & Update)."""
+    _initialize_app(verbose)
+    console.print(f"[bold blue]🚀 Starting Anki-Vibe Sync (Push)[/bold blue]")
+    
+    # 1. Resolve Profile
+    try:
+        target_profile = _resolve_profile(profile, yes=yes)
+    except Exception:
+        return
+
+    console.print(f"Targeting: [green]{target_profile}[/green]")
+    
+    # 2. Confirm
+    if not dry_run:
+         # Một chút an toàn: confirm trước khi push
+        if not yes and not typer.confirm(f"Do you want to push changes to Anki profile '{target_profile}'?"):
+             raise typer.Exit()
+
+    # 3. Execute
+    try:
+        adapter = AnkiConnectAdapter()
+        service = SyncService(target_profile, adapter)
+        
+        if dry_run:
+            console.print("[yellow]Dry run is not fully implemented yet. Skipping execution.[/yellow]")
+        else:
+            service.push_all_changes()
+            console.print(f"\n[bold green]✅ Sync (Push) completed successfully![/bold green]")
+            
+    except Exception as e:
+        logger.exception("Sync failed")
+        console.print(f"[bold red]❌ Error during sync:[/bold red] {e}")
 
 def main() -> None:
     app()

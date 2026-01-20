@@ -12,7 +12,8 @@ def _run_applescript(script: str) -> str:
     try:
         result = subprocess.run(["osascript", "-e", script], capture_output=True, text=True)
         if result.returncode != 0:
-            logger.debug(f"AppleScript Error: {result.stderr}")
+            # Chỉ log debug để tránh làm rác console nếu fallback hoạt động tốt
+            logger.debug(f"AppleScript Error: {result.stderr.strip()}")
             return ""
         return result.stdout.strip()
     except Exception as e:
@@ -27,34 +28,36 @@ def get_all_anki_window_titles() -> List[str]:
     titles = []
 
     if platform == "darwin":  # macOS
-        # --- CÁCH 1: Dùng Delimiter ||| (Chuẩn nhất) ---
+        # --- CÁCH 1: Dùng Delimiter ||| (FIXED SCOPE) ---
+        # Sửa lỗi -1728: Dùng "AppleScript's text item delimiters" thay vì chỉ "text item delimiters"
         script_strict = '''
         tell application "System Events"
             if exists process "Anki" then
                 set winList to name of every window of process "Anki"
-                set {TID, text item delimiters} to {text item delimiters, "|||"}
-                set resultText to winList as text
-                set text item delimiters to TID
-                return resultText
             else
                 return ""
             end if
         end tell
+        
+        -- Xử lý chuỗi bên ngoài block System Events để tránh lỗi scope
+        if winList is {} then return ""
+        
+        set {TID, AppleScript's text item delimiters} to {AppleScript's text item delimiters, "|||"}
+        set resultText to winList as text
+        set AppleScript's text item delimiters to TID
+        return resultText
         '''
         raw_strict = _run_applescript(script_strict)
         
         if raw_strict:
             titles = raw_strict.split('|||')
         else:
-            # --- CÁCH 2: Fallback (Giống lệnh tay của bạn) ---
-            # Nếu cách 1 fail (do permissions/encoding), thử lấy raw list mặc định
+            # --- CÁCH 2: Fallback ---
             logger.debug("Strict detection failed, trying fallback...")
             script_simple = 'tell application "System Events" to get name of every window of process "Anki"'
             raw_simple = _run_applescript(script_simple)
             
             if raw_simple:
-                # Output dạng: "Browse, User 1 - Anki"
-                # Ta tách bằng dấu phẩy + space (cách này rủi ro nếu tên deck có phẩy, nhưng tốt hơn là fail hẳn)
                 titles = raw_simple.split(', ')
 
     elif platform == "win32":  # Windows
@@ -74,9 +77,8 @@ def get_all_anki_window_titles() -> List[str]:
     # Clean titles
     clean_titles = [t.strip() for t in titles if t.strip()]
     
-    # [DEBUG FORCE] In ra console để bạn thấy Python đang nhìn thấy gì
-    if clean_titles:
-        print(f"[DEBUG] Detected Windows: {clean_titles}")
+    # [DEBUG] Uncomment dòng dưới nếu muốn debug sâu
+    # if clean_titles: print(f"[DEBUG] Detected Windows: {clean_titles}")
         
     return clean_titles
 
@@ -85,30 +87,22 @@ def detect_active_profile() -> Optional[str]:
     Phân tích titles để tìm profile.
     """
     titles = get_all_anki_window_titles()
-    
-    # Regex pattern: Bắt chuỗi trước " - Anki"
-    # Ví dụ: "Vijjo - Anki" -> match "Vijjo"
     pattern = re.compile(r"^(.*?) - Anki$")
     
     for title in titles:
-        # Bỏ qua các cửa sổ hệ thống của Anki
         if title in ["Anki", "Browse", "Add", "Stats", "Debug Console"]:
             continue
         
-        # Xử lý trường hợp "Browse (n notes...), Vijjo - Anki" bị dính vào nhau nếu split lỗi
-        # Ta tìm pattern " - Anki" bất kể nó nằm đâu trong string
+        # Ưu tiên match chính xác
+        match = pattern.match(title)
+        if match:
+            return match.group(1).strip()
+
+        # Fallback cho trường hợp chuỗi bị dính
         if " - Anki" in title:
-            # Nếu title chính xác là "Vijjo - Anki"
-            match = pattern.match(title)
-            if match:
-                return match.group(1).strip()
-            
-            # Fallback: Nếu string bị dính lẹo (ví dụ: "Browse, Vijjo - Anki")
-            # Ta cố gắng tách phần đuôi
             if title.endswith(" - Anki"):
-                # Lấy phần trước đó, nhưng cẩn thận dấu phẩy
                 parts = title.split(", ")
-                last_part = parts[-1] # Hy vọng là "Vijjo - Anki"
+                last_part = parts[-1]
                 match_fallback = pattern.match(last_part)
                 if match_fallback:
                     return match_fallback.group(1).strip()
