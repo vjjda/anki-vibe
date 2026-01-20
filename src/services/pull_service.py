@@ -24,9 +24,7 @@ from src.utils.text_utils import sanitize_filename
 # Khởi tạo Logger
 logger = logging.getLogger(__name__)
 
-# Số lượng luồng tối đa. 
-# Không nên để quá cao vì Anki là Single-threaded app, 
-# gửi quá nhiều request cùng lúc sẽ làm Anki bị treo (Not Responding).
+# Số lượng luồng tối đa.
 MAX_WORKERS = 5 
 
 class PullService:
@@ -39,12 +37,18 @@ class PullService:
         self.profile = profile_name
         self.adapter = adapter
         self.console = Console()
-        
-        # Cấu hình YAML dumper
-        self.yaml = YAML()
-        self.yaml.preserve_quotes = True
-        self.yaml.indent(mapping=2, sequence=4, offset=2)
-        self.yaml.width = 4096 
+        # Lưu ý: Không khởi tạo self.yaml ở đây nữa vì nó không thread-safe.
+
+    def _create_yaml_dumper(self) -> YAML:
+        """
+        Tạo một instance YAML mới cho mỗi luồng xử lý.
+        Điều này bắt buộc để tránh lỗi 'I/O operation on closed file' khi chạy multithread.
+        """
+        yaml = YAML()
+        yaml.preserve_quotes = True
+        yaml.indent(mapping=2, sequence=4, offset=2)
+        yaml.width = 4096
+        return yaml
 
     def pull_all_models(self) -> None:
         """
@@ -77,7 +81,6 @@ class PullService:
             
             main_task = progress.add_task("[cyan]Syncing Models...", total=total_models)
             
-            # Sử dụng ThreadPoolExecutor
             with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
                 # Submit tất cả các task vào pool
                 future_to_model = {
@@ -89,9 +92,8 @@ class PullService:
                 for future in as_completed(future_to_model):
                     model_name = future_to_model[future]
                     try:
-                        future.result() # Check nếu có exception
-                        # Update UI
-                        progress.update(main_task, description=f"Done: [green]{model_name}[/green]")
+                        future.result() # Check exception
+                        # Update UI (Optional: chỉ update text, progress bar tự advance)
                     except Exception as e:
                         progress.console.print(f"[red]Failed to process {model_name}: {e}[/red]")
                         logger.error(f"Error in thread for model {model_name}", exc_info=True)
@@ -116,19 +118,21 @@ class PullService:
             self._save_model_notes(model_name, model_dir)
             
         except Exception as e:
-            # Re-raise exception để ThreadPool bắt được
             raise e
 
     def _save_model_metadata(self, model_name: str, model_dir: Path) -> None:
         """Lưu config, css, template."""
         
+        # Tạo instance YAML cục bộ cho luồng này
+        yaml = self._create_yaml_dumper()
+
         # 1. Config
         config_data = {
             "anki_model_name": model_name,
             "description": f"Auto-generated config for model '{model_name}'"
         }
         with open(model_dir / "config.yaml", "w", encoding="utf-8") as f:
-            self.yaml.dump(config_data, f)
+            yaml.dump(config_data, f)
 
         # 2. CSS
         try:
@@ -156,6 +160,9 @@ class PullService:
     def _save_model_notes(self, model_name: str, model_dir: Path) -> None:
         """Fetch và lưu Notes."""
         
+        # Tạo instance YAML cục bộ cho luồng này
+        yaml = self._create_yaml_dumper()
+
         # 1. Tìm Note IDs
         escaped_model_name = model_name.replace('"', '\\"')
         note_ids = self.adapter.find_notes(f'note:"{escaped_model_name}"')
@@ -215,4 +222,4 @@ class PullService:
         # 5. Write to Disk
         if yaml_notes:
             with open(model_dir / "notes.yaml", "w", encoding="utf-8") as f:
-                self.yaml.dump(yaml_notes, f)
+                yaml.dump(yaml_notes, f)
