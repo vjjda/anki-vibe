@@ -56,7 +56,7 @@ class PullService:
             self.console.print(f"[bold red]❌ Failed to fetch model names:[/bold red] {e}")
             return
 
-        base_dir = settings.DATA_DIR / self.profile
+        base_dir = settings.ANKI_DATA_DIR / self.profile
         base_dir.mkdir(parents=True, exist_ok=True)
         
         # Danh sách các folder hợp lệ (Active) để dùng cho việc Cleanup sau này

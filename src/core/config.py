@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     # Paths
     BASE_DIR: Path = Path(__file__).resolve().parent.parent.parent
     DATA_DIR: Path = BASE_DIR / "data"
+    ANKI_DATA_DIR: Path = DATA_DIR / "anki"
     CONFIG_DIR: Path = BASE_DIR / "configs"
 
     model_config = SettingsConfigDict(

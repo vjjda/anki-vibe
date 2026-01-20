@@ -76,7 +76,7 @@ def pull(
 
     # 2. Safety Check
     console.print(f"\n[bold yellow]⚠️  CRITICAL WARNING:[/bold yellow]")
-    console.print(f"This will pull ALL data from profile '[bold]{target_profile}[/bold]' into [bold]{settings.DATA_DIR}/{target_profile}[/bold].")
+    console.print(f"This will pull ALL data from profile '[bold]{target_profile}[/bold]' into [bold]{settings.ANKI_DATA_DIR}/{target_profile}[/bold].")
     console.print("Existing files (notes.yaml, templates) may be overwritten.")
     
     if not force and not yes:
@@ -95,7 +95,7 @@ def pull(
         service.pull_all_models()
         
         console.print(f"\n[bold green]✅ Pull completed successfully![/bold green]")
-        console.print(f"Check your data at: {settings.DATA_DIR}/{target_profile}")
+        console.print(f"Check your data at: {settings.ANKI_DATA_DIR}/{target_profile}")
         
     except Exception as e:
         logger.exception("Pull failed")

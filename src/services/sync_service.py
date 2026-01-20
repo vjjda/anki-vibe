@@ -32,7 +32,7 @@ class SyncService:
         Đẩy toàn bộ thay đổi từ Local lên Anki (CREATE/UPDATE).
         Dựa trên so sánh Hash để tối ưu.
         """
-        profile_dir = settings.DATA_DIR / self.profile
+        profile_dir = settings.ANKI_DATA_DIR / self.profile
         if not profile_dir.exists():
             self.console.print(f"[red]No data found for profile {self.profile}[/red]")
             return
