@@ -1,75 +1,85 @@
-# Path: docs/architecture_and_workflow.md
-
 # Kiến Trúc Hệ Thống & Quy Trình Làm Việc (Anki-Vibe)
 
-Tài liệu này mô tả triết lý thiết kế, cấu trúc dữ liệu và quy trình đồng bộ hóa cho dự án `anki-vibe`.
+Tài liệu này mô tả kiến trúc kỹ thuật, luồng dữ liệu và cơ chế đồng bộ hóa của `anki-vibe` (Phiên bản 0.2.0+).
 
-## 1. Triết Lý Cốt Lõi (Core Philosophy)
+## 1. Mô Hình Hoạt Động (Hybrid Architecture)
 
-* **Code-as-Source-of-Truth:** Mã nguồn là nguồn dữ liệu gốc.
-* **Primary Direction (Push):** Luồng chính là `Code -> Anki`.
-* **Controlled Reverse Sync (Pull):** Hỗ trợ kéo dữ liệu từ Anki về Code (`Anki -> Code`) nhưng phải thực hiện thủ công và có kiểm soát qua Git.
-* **Schema-Centric:** Dữ liệu tổ chức theo Note Types.
+Anki Vibe hỗ trợ hai mô hình hoạt động song song, phục vụ các nhu cầu khác nhau:
 
-## 2. Quy Trình Làm Việc (Workflow)
+### A. Mô hình Dự án (Project-based Mode) - *Recommended*
+Đây là mô hình phi tập trung, cho phép bạn quản lý từng phần của bộ sưu tập Anki như một dự án phần mềm riêng biệt.
 
-### A. Quy trình Update thông thường (Push)
+*   **Context:** Được xác định bởi file cấu hình `anki-vibe.toml` tại thư mục gốc dự án.
+*   **Data Scope:** Chỉ quản lý một tập hợp nhỏ các Deck/Model được định nghĩa trong config (thông qua `Query`).
+*   **State:** Lưu trữ cục bộ tại `.anki_vibe.db` (SQLite) trong thư mục dự án.
+*   **Use Case:** Tạo bộ thẻ mới, học một ngôn ngữ cụ thể, chia sẻ bộ thẻ trên Github.
 
-1. **Edit:** Sửa file YAML/HTML trên Code Editor.
-2. **Sync:** Chạy `python src/main.py sync`.
-3. **Review:** Học trên Anki.
+### B. Mô hình Monorepo (Legacy Mode)
+Đây là mô hình tập trung, quản lý toàn bộ Profile Anki.
 
-### B. Quy trình Sửa trên App & Đồng bộ ngược (Pull-on-Demand)
+*   **Context:** Được xác định bằng tham số CLI `--profile ProfileName`.
+*   **Data Scope:** Quản lý **toàn bộ** Model và Note trong Profile đó.
+*   **Location:** Dữ liệu được lưu tập trung tại thư mục cài đặt `anki-vibe/data/anki/{ProfileName}`.
+*   **Use Case:** Backup toàn bộ Anki, chuyển đổi dữ liệu hàng loạt.
 
-Đây là quy trình an toàn để không bị mất dữ liệu hay hỏng format YAML.
+## 2. Luồng Dữ Liệu (Sync Logic)
 
-1. **Modify (Anki):** Sửa note trên Anki App (sửa typo, thêm ý...).
-2. **Git Commit (Checkpoint):** **BẮT BUỘC** commit code hiện tại để tạo điểm lưu.
-    * `git add . && git commit -m "pre-pull save"`
-3. **Pull:** Chạy lệnh sync ngược.
-    * `python src/main.py pull --profile "UserA"`
-    * Tool sẽ dùng `Note ID` để map dữ liệu và dùng `ruamel.yaml` để cập nhật fields mà vẫn giữ nguyên comments.
-4. **Review (Git Diff):** Kiểm tra file YAML xem tool đã sửa gì.
-    * Nếu ổn: `git commit`.
-    * Nếu lỗi: `git reset --hard` để quay lại.
+Hệ thống sử dụng cơ chế **State Tracking** để tối ưu hóa hiệu năng và đảm bảo tính toàn vẹn dữ liệu.
 
-## 3. Cấu Trúc Tổ Chức Dữ Liệu
+### Thành phần chính:
+1.  **YAML Files (Source of Truth):** Nơi người dùng chỉnh sửa.
+2.  **SQLite DB (State Tracker):** Lưu trữ Hash (SHA-256) của Note và Model tại thời điểm sync gần nhất.
+3.  **AnkiConnect (Adapter):** Cổng giao tiếp với Anki.
 
-```text
-anki-vibe/
-├── data/
-│   ├── UserA/
-│   │   ├── Basic_English/      # Note Type Name
-│   │   │   ├── config.yaml
-│   │   │   ├── unit1.yaml
-│   │   │   └── ...
+### Quy trình Sync (Push):
+1.  **Read:** Đọc tất cả file YAML trong project.
+2.  **Compute Hash:** Tính toán Hash hiện tại của từng Note (dựa trên Fields, Tags, Deck).
+3.  **Compare:** So sánh Hash hiện tại với Hash trong SQLite DB.
+    *   *Match:* Bỏ qua (Không thay đổi).
+    *   *Diff:* Đánh dấu là `Dirty`.
+    *   *New (No ID):* Đánh dấu là `Create`.
+4.  **Execute:** Gửi lệnh `multi` (Batch Update) hoặc `addNotes` lên Anki.
+5.  **Update State:** Nếu thành công, cập nhật Hash mới vào SQLite DB.
+
+### Quy trình Pull:
+1.  **Query:** Gửi Query (từ `anki-vibe.toml`) lên Anki để lấy danh sách Note IDs.
+2.  **Fetch:** Lấy thông tin chi tiết (Fields, CSS, Templates).
+3.  **Write:** Ghi đè file YAML/HTML local.
+4.  **Update State:** Cập nhật ngay lập tức Hash của dữ liệu vừa pull vào SQLite DB (để tránh sync ngược dư thừa).
+
+## 3. Cấu Trúc Dữ Liệu
+
+### A. File Cấu Hình (`anki-vibe.toml`)
+Dùng cho Project Mode.
+
+```toml
+[project]
+name = "JLPT N5"
+anki_profile = "User 1"
+
+[[targets]]
+name = "Vocab"
+model = "Basic"
+deck = "Japanese::N5"
+query = "deck:Japanese::N5"
+folder = "data/vocab"
 ```
 
-## 4. Định Dạng Dữ Liệu (YAML)
-
-Sử dụng thư viện `ruamel.yaml` để xử lý.
-**Yêu cầu bắt buộc:** Mỗi note phải có `id` (Anki Note ID) để phục vụ việc sync ngược.
+### B. File Dữ Liệu (`notes.yaml`)
 
 ```yaml
-# data/UserA/Basic_English/unit1.yaml
-
-# ID là bắt buộc để sync ngược.
-# Nếu là note mới tạo từ code, tool sẽ tự điền ID sau lần sync đầu tiên.
-- id: 169988223344
-  deck: "English::Vocabulary"
-  tags: ["unit1", "food"]
+- id: 169988223344      # Anki Note ID (null nếu là note mới)
+  deck: "Japanese::N5"
+  tags: ["vocab", "n5"]
   fields:
-    Word: "Apple"
-    # Comment giải thích vẫn được giữ nguyên khi pull
-    Meaning: |
-      <div>
-        <b>Quả táo</b>
-      </div>
+    Front: "Neko"
+    Back: "Con mèo"
 ```
 
-## 5. Module & Thư Viện Chính
+## 4. Công Nghệ Sử Dụng
 
-* **CLI:** `typer`
-* **Validation:** `pydantic`
-* **YAML Processing:** `ruamel.yaml` (Round-trip preservation)
-* **Anki Connector:** `requests` (AnkiConnect)
+*   **CLI Framework:** `typer` (Python).
+*   **Database:** `sqlite3` (Built-in).
+*   **Config Parsing:** `tomllib` (Python 3.11+).
+*   **YAML Processing:** `ruamel.yaml` (Preserves comments & layout).
+*   **Connectivity:** `requests` (HTTP to AnkiConnect).
