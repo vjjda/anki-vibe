@@ -1,5 +1,0 @@
-anki_model_name: Sinhala Vocab
-description: Auto-generated config for model 'Sinhala Vocab'
-templates:
-  Recognition: recognition
-  Recall: recall
