@@ -98,7 +98,8 @@ def pull(
             console.print(f"[bold green]⬇️  Starting Pull for Project: {config.project.name} (Profile: {target_profile})[/bold green]")
             
             adapter = AnkiConnectAdapter()
-            service = PullService(target_profile, adapter)
+            project_db_path = config_path.parent / ".anki_vibe.db"
+            service = PullService(target_profile, adapter, db_path=project_db_path)
             service.pull_project(config)
             
             console.print(f"\n[bold green]✅ Project Pull completed![/bold green]")
