@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 # Path: src/main.py
 import typer
 from rich.console import Console

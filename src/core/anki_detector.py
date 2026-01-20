@@ -1,3 +1,4 @@
+# Path: src/core/anki_detector.py
 import sys
 import subprocess
 import re
