@@ -39,3 +39,7 @@ data/**/*.colpkg
 # Nếu bạn có folder data nháp để test
 data/sandbox/
 scripts/test_output/
+
+# --- Anki Vibe Local State ---
+.anki_vibe.db
+**/.anki_vibe.db
