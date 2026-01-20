@@ -7,6 +7,7 @@ from typing import Optional
 from src.core.config import settings
 from src.core.anki_detector import detect_active_profile
 from src.core.logging_config import setup_logging
+from src.services.pull_service import PullService
 from src.adapters import AnkiConnectAdapter
 
 # Khởi tạo Logger cho module này
@@ -80,27 +81,41 @@ def pull(
     force: bool = typer.Option(False, "--force"),
     verbose: bool = typer.Option(False, "--verbose", "-v")
 ) -> None:
-    """[PULL] Fetch changes from Anki and update local YAML files."""
+    """[PULL] Fetch all models, templates, and notes from Anki."""
     _initialize_app(verbose)
-    console.print(f"[bold red]⬇️  Starting Anki-Vibe Pull (Reverse Sync)[/bold red]")
     
-    target_profile = _resolve_profile(profile)
+    # 1. Resolve Profile
+    try:
+        target_profile = _resolve_profile(profile)
+    except Exception:
+        return
+
+    # 2. Safety Check
+    console.print(f"\n[bold yellow]⚠️  CRITICAL WARNING:[/bold yellow]")
+    console.print(f"This will pull ALL data from profile '[bold]{target_profile}[/bold]' into [bold]{settings.DATA_DIR}/{target_profile}[/bold].")
+    console.print("Existing files (notes.yaml, templates) may be overwritten.")
     
-    # Safety Check
     if not force:
-        console.print(f"\n[bold yellow]⚠️  CRITICAL WARNING:[/bold yellow]")
-        console.print("This will overwrite local YAML files.")
-        if not typer.confirm("Have you committed your code to Git?"):
-            console.print("Aborted.")
-            raise typer.Exit()
-        
-        if not typer.confirm(f"Pull data for '{target_profile}'?"):
+        if not typer.confirm("Are you sure you want to proceed?"):
             raise typer.Exit()
 
-    logger.info(f"Starting pull process for profile: {target_profile}")
-    # TODO: Implement Pull Logic
-    logger.warning("Pull logic implementation coming soon...")
-    console.print("[green]✅ Pull process finished (simulation). Check git diff![/green]")
+    # 3. Execute Pull Service
+    console.print(f"[bold green]⬇️  Starting Pull for {target_profile}...[/bold green]")
+    
+    try:
+        # Load profile trên Anki trước (nếu chưa đúng)
+        adapter = AnkiConnectAdapter()
+        # adapter.load_profile(target_profile) # Cẩn thận: Load profile sẽ restart Anki gui sync.
+        
+        service = PullService(target_profile, adapter)
+        service.pull_all_models()
+        
+        console.print(f"\n[bold green]✅ Pull completed successfully![/bold green]")
+        console.print(f"Check your data at: {settings.DATA_DIR}/{target_profile}")
+        
+    except Exception as e:
+        logger.exception("Pull failed")
+        console.print(f"[bold red]❌ Error during pull:[/bold red] {e}")
 
 @app.command()
 def info(
