@@ -1,4 +1,5 @@
 # Path: docs/architecture_and_workflow.md
+
 # Kiến Trúc Hệ Thống & Quy Trình Làm Việc (Anki-Vibe)
 
 Tài liệu này mô tả triết lý thiết kế, cấu trúc dữ liệu và quy trình đồng bộ hóa cho dự án `anki-vibe`.
@@ -13,20 +14,22 @@ Tài liệu này mô tả triết lý thiết kế, cấu trúc dữ liệu và 
 ## 2. Quy Trình Làm Việc (Workflow)
 
 ### A. Quy trình Update thông thường (Push)
-1.  **Edit:** Sửa file YAML/HTML trên Code Editor.
-2.  **Sync:** Chạy `python src/main.py sync`.
-3.  **Review:** Học trên Anki.
+
+1. **Edit:** Sửa file YAML/HTML trên Code Editor.
+2. **Sync:** Chạy `python src/main.py sync`.
+3. **Review:** Học trên Anki.
 
 ### B. Quy trình Sửa trên App & Đồng bộ ngược (Pull-on-Demand)
+
 Đây là quy trình an toàn để không bị mất dữ liệu hay hỏng format YAML.
 
-1.  **Modify (Anki):** Sửa note trên Anki App (sửa typo, thêm ý...).
-2.  **Git Commit (Checkpoint):** **BẮT BUỘC** commit code hiện tại để tạo điểm lưu.
+1. **Modify (Anki):** Sửa note trên Anki App (sửa typo, thêm ý...).
+2. **Git Commit (Checkpoint):** **BẮT BUỘC** commit code hiện tại để tạo điểm lưu.
     * `git add . && git commit -m "pre-pull save"`
-3.  **Pull:** Chạy lệnh sync ngược.
+3. **Pull:** Chạy lệnh sync ngược.
     * `python src/main.py pull --profile "UserA"`
     * Tool sẽ dùng `Note ID` để map dữ liệu và dùng `ruamel.yaml` để cập nhật fields mà vẫn giữ nguyên comments.
-4.  **Review (Git Diff):** Kiểm tra file YAML xem tool đã sửa gì.
+4. **Review (Git Diff):** Kiểm tra file YAML xem tool đã sửa gì.
     * Nếu ổn: `git commit`.
     * Nếu lỗi: `git reset --hard` để quay lại.
 
@@ -65,6 +68,7 @@ Sử dụng thư viện `ruamel.yaml` để xử lý.
 ```
 
 ## 5. Module & Thư Viện Chính
+
 * **CLI:** `typer`
 * **Validation:** `pydantic`
 * **YAML Processing:** `ruamel.yaml` (Round-trip preservation)
