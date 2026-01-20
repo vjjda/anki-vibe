@@ -1,10 +1,19 @@
 # Path: src/services/pull_service.py
 import logging
 from pathlib import Path
-from typing import List, Dict, Any
-from rich.console import Console
-from rich.progress import Progress, SpinnerColumn, TextColumn, BarColumn
+from typing import List, Dict, Any, Optional
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
+from rich.console import Console
+from rich.progress import (
+    Progress,
+    SpinnerColumn,
+    TextColumn,
+    BarColumn,
+    TaskID
+)
+
+# Sử dụng ruamel.yaml để giữ format và comment
 from ruamel.yaml import YAML
 from ruamel.yaml.scalarstring import PreservedScalarString
 
@@ -12,62 +21,106 @@ from src.core.config import settings
 from src.adapters import AnkiConnectAdapter
 from src.utils.text_utils import sanitize_filename
 
+# Khởi tạo Logger
 logger = logging.getLogger(__name__)
 
+# Số lượng luồng tối đa. 
+# Không nên để quá cao vì Anki là Single-threaded app, 
+# gửi quá nhiều request cùng lúc sẽ làm Anki bị treo (Not Responding).
+MAX_WORKERS = 5 
+
 class PullService:
+    """
+    Service chịu trách nhiệm kéo dữ liệu từ Anki về lưu trữ local.
+    Hỗ trợ Multithreading để tăng tốc độ xử lý I/O và Network.
+    """
+
     def __init__(self, profile_name: str, adapter: AnkiConnectAdapter):
         self.profile = profile_name
         self.adapter = adapter
         self.console = Console()
         
-        # Setup YAML
+        # Cấu hình YAML dumper
         self.yaml = YAML()
         self.yaml.preserve_quotes = True
         self.yaml.indent(mapping=2, sequence=4, offset=2)
         self.yaml.width = 4096 
 
-    def pull_all_models(self):
-        """Pull toàn bộ Models và Notes của Profile về máy."""
+    def pull_all_models(self) -> None:
+        """
+        Main entry point: Pull toàn bộ Models và Notes sử dụng Multithreading.
+        """
+        # 1. Lấy danh sách Models (Thực hiện tuần tự vì rất nhanh)
         try:
             model_names = self.adapter.get_model_names()
         except Exception as e:
-            self.console.print(f"[red]Failed to fetch model names: {e}[/red]")
+            logger.error(f"Failed to fetch model names: {e}")
+            self.console.print(f"[bold red]❌ Failed to fetch model names:[/bold red] {e}")
             return
 
+        # Tạo thư mục gốc
         base_dir = settings.DATA_DIR / self.profile
         base_dir.mkdir(parents=True, exist_ok=True)
         
-        self.console.print(f"Found [bold]{len(model_names)}[/bold] models in profile [green]{self.profile}[/green].")
+        total_models = len(model_names)
+        self.console.print(f"Found [bold cyan]{total_models}[/bold cyan] models. Starting sync with {MAX_WORKERS} threads...")
 
+        # 2. Setup Progress Bar và ThreadPool
         with Progress(
             SpinnerColumn(),
             TextColumn("[progress.description]{task.description}"),
             BarColumn(),
             TextColumn("{task.percentage:>3.0f}%"),
+            TextColumn("• [cyan]{task.completed}/{task.total}"),
+            console=self.console
         ) as progress:
-            main_task = progress.add_task("[cyan]Syncing Models...", total=len(model_names))
             
-            for model_name in model_names:
-                progress.update(main_task, description=f"Processing: {model_name}")
-                self._process_single_model(model_name, base_dir)
-                progress.advance(main_task)
+            main_task = progress.add_task("[cyan]Syncing Models...", total=total_models)
+            
+            # Sử dụng ThreadPoolExecutor
+            with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+                # Submit tất cả các task vào pool
+                future_to_model = {
+                    executor.submit(self._process_single_model, model_name, base_dir): model_name 
+                    for model_name in model_names
+                }
+                
+                # Xử lý khi các task hoàn thành (as_completed)
+                for future in as_completed(future_to_model):
+                    model_name = future_to_model[future]
+                    try:
+                        future.result() # Check nếu có exception
+                        # Update UI
+                        progress.update(main_task, description=f"Done: [green]{model_name}[/green]")
+                    except Exception as e:
+                        progress.console.print(f"[red]Failed to process {model_name}: {e}[/red]")
+                        logger.error(f"Error in thread for model {model_name}", exc_info=True)
+                    finally:
+                        progress.advance(main_task)
 
-    def _process_single_model(self, model_name: str, base_dir: Path):
-        safe_name = sanitize_filename(model_name)
-        model_dir = base_dir / safe_name
-        model_dir.mkdir(exist_ok=True)
+    def _process_single_model(self, model_name: str, base_dir: Path) -> None:
+        """
+        Xử lý logic cho 1 Model cụ thể.
+        Hàm này sẽ chạy trong một Thread riêng biệt.
+        """
+        try:
+            # Tạo tên thư mục
+            safe_name = sanitize_filename(model_name)
+            model_dir = base_dir / safe_name
+            model_dir.mkdir(exist_ok=True)
 
-        # A. Metadata
-        self._save_model_metadata(model_name, model_dir)
-        
-        # B. Notes (Updated Logic)
-        self._save_model_notes(model_name, model_dir)
+            # A. Metadata (Config, CSS, Templates)
+            self._save_model_metadata(model_name, model_dir)
+            
+            # B. Data (Notes)
+            self._save_model_notes(model_name, model_dir)
+            
+        except Exception as e:
+            # Re-raise exception để ThreadPool bắt được
+            raise e
 
-    def _save_model_metadata(self, model_name: str, model_dir: Path):
-        # ... (Giữ nguyên logic lưu config, css, template như cũ) ...
-        # Để tiết kiệm không gian hiển thị, tôi không paste lại đoạn này 
-        # vì nó không thay đổi so với phiên bản trước.
-        # Bạn giữ nguyên hàm này nhé.
+    def _save_model_metadata(self, model_name: str, model_dir: Path) -> None:
+        """Lưu config, css, template."""
         
         # 1. Config
         config_data = {
@@ -80,84 +133,86 @@ class PullService:
         # 2. CSS
         try:
             styling = self.adapter.get_model_styling(model_name)
-            with open(model_dir / "style.css", "w", encoding="utf-8") as f:
-                f.write(styling.get("css", ""))
-        except Exception:
-            pass # Ignore error
+            css_content = styling.get("css", "")
+            if css_content:
+                with open(model_dir / "style.css", "w", encoding="utf-8") as f:
+                    f.write(css_content)
+        except Exception as e:
+            logger.warning(f"Could not save CSS for {model_name}: {e}")
 
         # 3. Templates
         try:
             templates = self.adapter.get_model_templates(model_name)
-            for name, tpl in templates.items():
-                safe_tpl_name = sanitize_filename(name).lower()
+            for tpl_name, tpl_content in templates.items():
+                safe_tpl_name = sanitize_filename(tpl_name).lower()
+                
                 with open(model_dir / f"{safe_tpl_name}_front.html", "w", encoding="utf-8") as f:
-                    f.write(tpl.get("qfmt", ""))
+                    f.write(tpl_content.get("qfmt", ""))
                 with open(model_dir / f"{safe_tpl_name}_back.html", "w", encoding="utf-8") as f:
-                    f.write(tpl.get("afmt", ""))
-        except Exception:
-            pass
+                    f.write(tpl_content.get("afmt", ""))
+        except Exception as e:
+            logger.warning(f"Could not save templates for {model_name}: {e}")
 
-    def _save_model_notes(self, model_name: str, model_dir: Path):
-        try:
-            # 1. Tìm Note IDs
-            note_ids = self.adapter.find_notes(f'note:"{model_name}"')
-            if not note_ids:
-                return
+    def _save_model_notes(self, model_name: str, model_dir: Path) -> None:
+        """Fetch và lưu Notes."""
+        
+        # 1. Tìm Note IDs
+        escaped_model_name = model_name.replace('"', '\\"')
+        note_ids = self.adapter.find_notes(f'note:"{escaped_model_name}"')
+        
+        if not note_ids:
+            return
 
-            # 2. Fetch Note Details
-            notes_info = self.adapter.get_notes_info(note_ids)
-            
-            # --- NEW LOGIC: FETCH DECK NAME VIA CARDS ---
-            # Gom tất cả Card IDs từ tất cả các notes
-            all_card_ids = []
-            for info in notes_info:
-                cards = info.get("cards", [])
-                if cards:
-                    all_card_ids.extend(cards)
-            
-            # Gọi API cardsInfo (Batch processing)
-            # Map: CardID -> DeckName
-            card_deck_map = {}
-            if all_card_ids:
-                # Nếu số lượng quá lớn (>1000), AnkiConnect vẫn xử lý ổn, 
-                # nhưng an toàn có thể chia chunk. Ở đây làm đơn giản trước.
+        # 2. Fetch Note Info (Batch)
+        notes_info = self.adapter.get_notes_info(note_ids)
+        
+        # 3. Resolve Deck Names (Batch Processing Logic)
+        all_card_ids = []
+        for info in notes_info:
+            cards = info.get("cards", [])
+            if cards:
+                all_card_ids.extend(cards)
+        
+        card_deck_map: Dict[int, str] = {}
+        if all_card_ids:
+            try:
+                # Gọi API cardsInfo
                 cards_info_list = self.adapter.get_cards_info(all_card_ids)
                 for c in cards_info_list:
-                    card_deck_map[c['cardId']] = c['deckName']
-            # ---------------------------------------------
+                    if 'cardId' in c and 'deckName' in c:
+                        card_deck_map[c['cardId']] = c['deckName']
+            except Exception as e:
+                logger.error(f"Failed to fetch card details: {e}")
 
-            yaml_notes = []
-            for info in notes_info:
-                # Resolve Deck Name
-                # Lấy card đầu tiên của note để xác định deck
-                note_cards = info.get("cards", [])
-                deck_name = "Unknown"
-                if note_cards:
-                    first_card_id = note_cards[0]
-                    deck_name = card_deck_map.get(first_card_id, "Unknown")
+        # 4. Build YAML structure
+        yaml_notes = []
+        for info in notes_info:
+            # Resolve Deck
+            note_cards = info.get("cards", [])
+            deck_name = "Unknown"
+            if note_cards:
+                first_card_id = note_cards[0]
+                deck_name = card_deck_map.get(first_card_id, "Unknown")
 
-                # Process Fields
-                processed_fields = {}
-                for key, val in info.get("fields", {}).items():
-                    val_content = val.get("value", "")
-                    # Logic: Nếu có xuống dòng hoặc tag HTML phức tạp -> Block Style
-                    if "\n" in val_content or ("<" in val_content and ">" in val_content):
-                        processed_fields[key] = PreservedScalarString(val_content)
-                    else:
-                        processed_fields[key] = val_content
+            # Process Fields
+            processed_fields = {}
+            for key, val in info.get("fields", {}).items():
+                val_content = val.get("value", "")
+                if "\n" in val_content or ("<" in val_content and ">" in val_content) or len(val_content) > 60:
+                    processed_fields[key] = PreservedScalarString(val_content)
+                else:
+                    processed_fields[key] = val_content
 
-                note_entry = {
-                    "id": info.get("noteId"),
-                    "deck": deck_name, # ✅ Giờ đã có tên Deck chính xác
-                    "tags": info.get("tags", []),
-                    "fields": processed_fields
-                }
-                
-                yaml_notes.append(note_entry)
+            note_entry = {
+                "id": info.get("noteId"),
+                "deck": deck_name,
+                "tags": info.get("tags", []),
+                "fields": processed_fields
+            }
+            
+            yaml_notes.append(note_entry)
 
-            # 4. Save to notes.yaml
+        # 5. Write to Disk
+        if yaml_notes:
             with open(model_dir / "notes.yaml", "w", encoding="utf-8") as f:
                 self.yaml.dump(yaml_notes, f)
-
-        except Exception as e:
-            logger.error(f"Error fetching notes for {model_name}: {e}")
