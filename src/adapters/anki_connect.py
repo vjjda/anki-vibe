@@ -151,3 +151,12 @@ class AnkiConnectAdapter:
             "fields": fields
         }
         self._invoke("updateNoteFields", note=note_data)
+    
+    def get_cards_info(self, card_ids: List[int]) -> List[Dict[str, Any]]:
+        """
+        Lấy thông tin chi tiết của danh sách Card IDs.
+        Dùng để xác định Deck Name của một Note.
+        """
+        if not card_ids:
+            return []
+        return self._invoke("cardsInfo", cards=card_ids)
