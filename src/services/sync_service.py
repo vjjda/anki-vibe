@@ -18,7 +18,11 @@ class SyncService:
     def __init__(self, profile_name: str, adapter: AnkiConnectAdapter):
         self.profile = profile_name
         self.adapter = adapter
-        self.state_manager = StateManager(profile_name)
+        
+        # State DB nằm trong folder profile (Legacy/Monorepo mode)
+        db_path = settings.ANKI_DATA_DIR / profile_name / ".anki_vibe.db"
+        self.state_manager = StateManager(db_path)
+        
         self.console = Console()
         
         # YAML setup (để ghi lại ID)
