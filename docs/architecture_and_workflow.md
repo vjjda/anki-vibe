@@ -1,93 +1,71 @@
+# Path: docs/architecture_and_workflow.md
 # Kiến Trúc Hệ Thống & Quy Trình Làm Việc (Anki-Vibe)
 
 Tài liệu này mô tả triết lý thiết kế, cấu trúc dữ liệu và quy trình đồng bộ hóa cho dự án `anki-vibe`.
 
 ## 1. Triết Lý Cốt Lõi (Core Philosophy)
 
-* **Code-as-Source-of-Truth:** Mã nguồn (YAML/HTML/Python) là nguồn dữ liệu gốc duy nhất. Dữ liệu trên Anki (App) chỉ là bản hiển thị (projection) của dữ liệu trong Code.
-* **Unidirectional Data Flow:** Luồng dữ liệu đi một chiều: `Code -> Anki`. Không hỗ trợ sync ngược từ Anki về Code để tránh xung đột (trừ lần import khởi tạo ban đầu).
-* **Schema-Centric Organization:** Dữ liệu được tổ chức theo cấu trúc (Note Types) thay vì vị trí lưu trữ (Decks).
+* **Code-as-Source-of-Truth:** Mã nguồn là nguồn dữ liệu gốc.
+* **Primary Direction (Push):** Luồng chính là `Code -> Anki`.
+* **Controlled Reverse Sync (Pull):** Hỗ trợ kéo dữ liệu từ Anki về Code (`Anki -> Code`) nhưng phải thực hiện thủ công và có kiểm soát qua Git.
+* **Schema-Centric:** Dữ liệu tổ chức theo Note Types.
 
 ## 2. Quy Trình Làm Việc (Workflow)
 
-```mermaid
-graph LR
-    User((Developer)) -->|Edit YAML/HTML| Code[Project Files]
-    Code -->|Parse & Validate| Logic[Python Engine]
-    Logic -->|Connect via HTTP| AnkiConnect[AnkiConnect API]
-    AnkiConnect -->|Update/Upsert| AnkiDB[(Anki Collection)]
-    
-    subgraph "Anki-Vibe Scope"
-    Code
-    Logic
-    end
-    
-    subgraph "External"
-    AnkiConnect
-    AnkiDB
-    end
-```
+### A. Quy trình Update thông thường (Push)
+1.  **Edit:** Sửa file YAML/HTML trên Code Editor.
+2.  **Sync:** Chạy `python src/main.py sync`.
+3.  **Review:** Học trên Anki.
 
-1.  **Chỉnh sửa (Develop):** Người dùng chỉnh sửa nội dung bài học trong các file YAML và giao diện thẻ trong các file HTML/CSS.
-2.  **Đồng bộ (Sync):** Chạy lệnh CLI để đẩy thay đổi lên Anki.
-    * Lệnh: `python src/main.py sync --profile "UserA"`
-3.  **Hiển thị (Review):** Mở Anki để học tập.
+### B. Quy trình Sửa trên App & Đồng bộ ngược (Pull-on-Demand)
+Đây là quy trình an toàn để không bị mất dữ liệu hay hỏng format YAML.
 
-## 3. Cấu Trúc Tổ Chức Dữ Liệu (Data Structure)
+1.  **Modify (Anki):** Sửa note trên Anki App (sửa typo, thêm ý...).
+2.  **Git Commit (Checkpoint):** **BẮT BUỘC** commit code hiện tại để tạo điểm lưu.
+    * `git add . && git commit -m "pre-pull save"`
+3.  **Pull:** Chạy lệnh sync ngược.
+    * `python src/main.py pull --profile "UserA"`
+    * Tool sẽ dùng `Note ID` để map dữ liệu và dùng `ruamel.yaml` để cập nhật fields mà vẫn giữ nguyên comments.
+4.  **Review (Git Diff):** Kiểm tra file YAML xem tool đã sửa gì.
+    * Nếu ổn: `git commit`.
+    * Nếu lỗi: `git reset --hard` để quay lại.
 
-Chúng ta tổ chức dữ liệu dựa trên **Profile** và **Note Type (Model)**.
+## 3. Cấu Trúc Tổ Chức Dữ Liệu
 
-### Cây thư mục
 ```text
 anki-vibe/
 ├── data/
-│   ├── UserA/                  # Tên Profile Anki
-│   │   ├── Basic_English/      # Tên Note Type (Model)
-│   │   │   ├── config.yaml     # Cấu hình Model (Fields, Templates mapping)
-│   │   │   ├── unit1.yaml      # Dữ liệu bài 1
-│   │   │   ├── unit2.yaml      # Dữ liệu bài 2
-│   │   │   └── images/         # (Optional) Symlink để preview ảnh
-│   │   └── Cloze_Geography/    # Note Type khác
-│   └── UserB/                  # Profile khác
+│   ├── UserA/
+│   │   ├── Basic_English/      # Note Type Name
+│   │   │   ├── config.yaml
+│   │   │   ├── unit1.yaml
+│   │   │   └── ...
 ```
 
-### Tại sao chọn Note Type làm thư mục gốc?
-* Một **Note Type** có cấu trúc trường (Fields) cố định. Việc này giúp dễ dàng validate dữ liệu đầu vào.
-* **Deck** chỉ là một thuộc tính của Note. Một Note Type có thể tạo ra các note nằm rải rác ở nhiều Deck khác nhau.
+## 4. Định Dạng Dữ Liệu (YAML)
 
-## 4. Định Dạng Dữ Liệu (File Format)
-
-Chúng ta sử dụng **YAML** thay vì JSON.
-
-**Lý do:**
-1.  **Multi-line Strings:** Hỗ trợ viết HTML nhiều dòng sạch sẽ (rất quan trọng cho các trường Front/Back của Anki).
-2.  **Comments:** Cho phép ghi chú trực tiếp vào file dữ liệu.
-3.  **Readability:** Dễ đọc và chỉnh sửa bằng mắt thường.
-
-**Ví dụ cấu trúc file `.yaml`:**
+Sử dụng thư viện `ruamel.yaml` để xử lý.
+**Yêu cầu bắt buộc:** Mỗi note phải có `id` (Anki Note ID) để phục vụ việc sync ngược.
 
 ```yaml
 # data/UserA/Basic_English/unit1.yaml
-- deck: "English::Vocabulary"   # Deck đích
-  tags: ["unit1", "food"]       # Tags
+
+# ID là bắt buộc để sync ngược.
+# Nếu là note mới tạo từ code, tool sẽ tự điền ID sau lần sync đầu tiên.
+- id: 169988223344
+  deck: "English::Vocabulary"
+  tags: ["unit1", "food"]
   fields:
     Word: "Apple"
+    # Comment giải thích vẫn được giữ nguyên khi pull
     Meaning: |
       <div>
         <b>Quả táo</b>
       </div>
-      <img src="apple.png">
-    Sound: "[sound:apple.mp3]"
 ```
 
-## 5. Quản Lý Media (Hình ảnh/Âm thanh)
-
-* **Nguyên tắc:** Project **không lưu trữ vật lý** các file media nặng để giữ Git repo nhẹ nhàng.
-* **Tham chiếu:** Trong file YAML, media chỉ được lưu dưới dạng chuỗi văn bản (tên file), ví dụ: `apple.png`.
-* **Lưu trữ thực tế:** File thực tế nằm trong folder `collection.media` của Anki. AnkiConnect sẽ tự động tìm kiếm file này dựa trên tên.
-* **Local Preview:** Có thể tạo Symlink từ folder media của Anki vào folder `data` nếu muốn xem trước ảnh trên Code Editor, nhưng không commit symlink này.
-
-## 6. Chiến Lược Xử Lý Dữ Liệu Lớn
-
-* **Splitting:** Không dồn 1000 notes vào một file. Chia nhỏ thành nhiều file YAML (`part1.yaml`, `part2.yaml`, `chapter1.yaml`) trong cùng thư mục Note Type.
-* **Merging:** Tool sẽ tự động quét và gộp tất cả file YAML trong thư mục khi chạy sync.
+## 5. Module & Thư Viện Chính
+* **CLI:** `typer`
+* **Validation:** `pydantic`
+* **YAML Processing:** `ruamel.yaml` (Round-trip preservation)
+* **Anki Connector:** `requests` (AnkiConnect)

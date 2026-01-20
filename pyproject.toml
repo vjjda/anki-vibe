@@ -16,6 +16,7 @@ pyyaml = "^6.0"                                  # YAML processing
 requests = "^2.31.0"                             # HTTP Client for AnkiConnect
 rich = "^13.7.0"                                 # Beautiful Terminal Output
 jinja2 = "^3.1.0"                                # Template Engine for HTML
+ruamel-yaml = "^0.19.1"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.11.0"       # Code Formatter

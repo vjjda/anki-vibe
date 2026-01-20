@@ -934,6 +934,24 @@ typing-extensions = {version = ">=4.0.0,<5.0", markers = "python_version < \"3.1
 jupyter = ["ipywidgets (>=7.5.1,<9)"]
 
 [[package]]
+name = "ruamel-yaml"
+version = "0.19.1"
+description = "ruamel.yaml is a YAML parser/emitter that supports roundtrip preservation of comments, seq/map flow style, and map key order"
+optional = false
+python-versions = ">=3.9"
+groups = ["main"]
+files = [
+    {file = "ruamel_yaml-0.19.1-py3-none-any.whl", hash = "sha256:27592957fedf6e0b62f281e96effd28043345e0e66001f97683aa9a40c667c93"},
+    {file = "ruamel_yaml-0.19.1.tar.gz", hash = "sha256:53eb66cd27849eff968ebf8f0bf61f46cdac2da1d1f3576dd4ccee9b25c31993"},
+]
+
+[package.extras]
+docs = ["mercurial (>5.7)", "ryd"]
+jinja2 = ["ruamel.yaml.jinja2 (>=0.2)"]
+libyaml = ["ruamel.yaml.clibz (>=0.3.7) ; platform_python_implementation == \"CPython\""]
+oldlibyaml = ["ruamel.yaml.clib ; platform_python_implementation == \"CPython\""]
+
+[[package]]
 name = "ruff"
 version = "0.1.15"
 description = "An extremely fast Python linter and code formatter, written in Rust."
@@ -1130,4 +1148,4 @@ zstd = ["backports-zstd (>=1.0.0) ; python_version < \"3.14\""]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.10"
-content-hash = "8a041ebc895910e6800df4b40cb391459091207438fdb9ed8e73b2fb7976e405"
+content-hash = "71e6f401a6bceb70e129d3daa05739edacf4738d4378fa9d3ac47ef7e327acb6"
