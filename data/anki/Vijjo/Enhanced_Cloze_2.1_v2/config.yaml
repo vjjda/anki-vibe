@@ -1,2 +1,4 @@
 anki_model_name: Enhanced Cloze 2.1 v2
 description: Auto-generated config for model 'Enhanced Cloze 2.1 v2'
+templates:
+  Enhanced Cloze: enhanced_cloze

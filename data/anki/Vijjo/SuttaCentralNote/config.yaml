@@ -1,2 +1,4 @@
 anki_model_name: SuttaCentralNote
 description: Auto-generated config for model 'SuttaCentralNote'
+templates:
+  Card 1: card_1

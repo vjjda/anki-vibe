@@ -1,2 +1,5 @@
 anki_model_name: Singala
 description: Auto-generated config for model 'Singala'
+templates:
+  Card 1: card_1
+  Card 2: card_2

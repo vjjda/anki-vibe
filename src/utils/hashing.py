@@ -26,8 +26,16 @@ def compute_model_hash(css: str, templates: Dict[str, Any]) -> str:
     """
     Hash đại diện cho giao diện Model (CSS + Templates).
     """
+    # Normalize templates content to avoid whitespace issues (e.g. trailing newline)
+    norm_templates = {}
+    for name, content in templates.items():
+        norm_templates[name] = {
+            "Front": content.get("Front", "").strip(),
+            "Back": content.get("Back", "").strip()
+        }
+
     payload = {
         "css": css.strip(),
-        "templates": templates
+        "templates": norm_templates
     }
     return compute_hash(payload)

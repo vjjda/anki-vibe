@@ -160,10 +160,22 @@ class PullService:
     def _save_model_metadata(self, model_name: str, model_dir: Path) -> None:
         yaml = self._create_yaml_dumper()
 
+        # Prepare templates mapping for config
+        templates_map_config = {}
+        try:
+            templates = self.adapter.get_model_templates(model_name)
+            for tpl_name in templates.keys():
+                safe_tpl_name = sanitize_filename(tpl_name).lower()
+                templates_map_config[tpl_name] = safe_tpl_name
+        except Exception as e:
+            logger.warning(f"Could not fetch templates for config mapping: {e}")
+            templates = {}
+
         # Config
         config_data = {
             "anki_model_name": model_name,
-            "description": f"Auto-generated config for model '{model_name}'"
+            "description": f"Auto-generated config for model '{model_name}'",
+            "templates": templates_map_config
         }
         with open(model_dir / "config.yaml", "w", encoding="utf-8") as f:
             yaml.dump(config_data, f)
@@ -179,24 +191,21 @@ class PullService:
         except Exception as e:
             logger.warning(f"Could not save CSS for {model_name}: {e}")
 
-        # Templates
+        # Templates Files
         templates_map = {}
-        try:
-            templates = self.adapter.get_model_templates(model_name)
-            for tpl_name, tpl_content in templates.items():
-                qfmt = tpl_content.get("qfmt", "")
-                afmt = tpl_content.get("afmt", "")
-                
-                # Format map để tính Hash
-                templates_map[tpl_name] = {"Front": qfmt, "Back": afmt}
-                
-                safe_tpl_name = sanitize_filename(tpl_name).lower()
+        for tpl_name, tpl_content in templates.items():
+            qfmt = tpl_content.get("qfmt", "")
+            afmt = tpl_content.get("afmt", "")
+            
+            # Format map để tính Hash
+            templates_map[tpl_name] = {"Front": qfmt, "Back": afmt}
+            
+            safe_tpl_name = templates_map_config.get(tpl_name)
+            if safe_tpl_name:
                 with open(model_dir / f"{safe_tpl_name}_front.html", "w", encoding="utf-8") as f:
                     f.write(qfmt)
                 with open(model_dir / f"{safe_tpl_name}_back.html", "w", encoding="utf-8") as f:
                     f.write(afmt)
-        except Exception as e:
-            logger.warning(f"Could not save templates for {model_name}: {e}")
             
         # Update State
         try:

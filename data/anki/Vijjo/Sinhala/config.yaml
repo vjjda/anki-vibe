@@ -1,2 +1,5 @@
 anki_model_name: Sinhala
 description: Auto-generated config for model 'Sinhala'
+templates:
+  Sinhala -> English: sinhala_-_english
+  English -> Sinhala: english_-_sinhala

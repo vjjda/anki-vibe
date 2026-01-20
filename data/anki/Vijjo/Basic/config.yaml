@@ -1,2 +1,4 @@
 anki_model_name: Basic
 description: Auto-generated config for model 'Basic'
+templates:
+  Card 1: card_1

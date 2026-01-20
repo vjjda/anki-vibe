@@ -123,17 +123,36 @@ class SyncService:
             if css_path.exists():
                 css = css_path.read_text(encoding="utf-8")
             
-            # Đọc templates (giả sử tên file chuẩn từ pull)
-            # Logic đơn giản: Scan file _front.html và _back.html
-            for file in model_dir.glob("*_front.html"):
-                card_name = file.name.replace("_front.html", "").replace("_", " ").title() # Tên thẻ ước lượng
-                back_file = model_dir / file.name.replace("_front.html", "_back.html")
-                
-                if back_file.exists():
-                    templates[card_name] = {
-                        "Front": file.read_text(encoding="utf-8"),
-                        "Back": back_file.read_text(encoding="utf-8")
-                    }
+            # Đọc template mapping từ config.yaml
+            config_path = model_dir / "config.yaml"
+            templates_mapping = {}
+            if config_path.exists():
+                with open(config_path, "r", encoding="utf-8") as f:
+                    config_data = self.yaml.load(f)
+                    templates_mapping = config_data.get("templates", {})
+
+            if templates_mapping:
+                # Cách mới: Đọc dựa trên mapping chính xác
+                for tpl_name, file_prefix in templates_mapping.items():
+                    front_path = model_dir / f"{file_prefix}_front.html"
+                    back_path = model_dir / f"{file_prefix}_back.html"
+                    
+                    if front_path.exists() and back_path.exists():
+                        templates[tpl_name] = {
+                            "Front": front_path.read_text(encoding="utf-8"),
+                            "Back": back_path.read_text(encoding="utf-8")
+                        }
+            else:
+                # Fallback: Logic cũ (Scan file)
+                for file in model_dir.glob("*_front.html"):
+                    card_name = file.name.replace("_front.html", "").replace("_", " ").title()
+                    back_file = model_dir / file.name.replace("_front.html", "_back.html")
+                    
+                    if back_file.exists():
+                        templates[card_name] = {
+                            "Front": file.read_text(encoding="utf-8"),
+                            "Back": back_file.read_text(encoding="utf-8")
+                        }
         except Exception as e:
             logger.error(f"Error reading model files for {model_name}: {e}")
             return

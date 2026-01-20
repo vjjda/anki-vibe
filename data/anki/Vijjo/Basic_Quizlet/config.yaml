@@ -1,2 +1,5 @@
 anki_model_name: Basic Quizlet
 description: Auto-generated config for model 'Basic Quizlet'
+templates:
+  Normal: normal
+  Card 2: card_2

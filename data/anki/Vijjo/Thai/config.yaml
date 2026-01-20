@@ -1,2 +1,5 @@
 anki_model_name: Thai
 description: Auto-generated config for model 'Thai'
+templates:
+  Thai -> English: thai_-_english
+  English -> Thai: english_-_thai

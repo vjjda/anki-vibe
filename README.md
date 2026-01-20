@@ -8,14 +8,14 @@ It enables you to treat your knowledge base like a software project: use Git for
 
 ## 🌟 Key Features
 
-*   **Project-based Workflow:** Create isolated projects for specific topics (e.g., "JLPT N5", "Medical Terminology") without syncing your entire Anki collection.
-*   **Code-as-Source-of-Truth:** Your YAML/Markdown files are the master copy.
-*   **Git-Friendly:** Designed to work perfectly with Git. Review changes with `git diff` before pushing to Anki.
-*   **Smart Sync:** Uses **SQLite** based state tracking and Hash comparison to update only changed notes, ensuring speed and efficiency.
-*   **Scoped Pull:** Pull only the specific decks or note types you need using powerful Anki queries.
-*   **Round-trip Editing:**
-    *   **Push:** Edit YAML -> Sync to Anki.
-    *   **Pull:** Edit in Anki -> Pull to YAML (preserves comments and formatting).
+* **Project-based Workflow:** Create isolated projects for specific topics (e.g., "JLPT N5", "Medical Terminology") without syncing your entire Anki collection.
+* **Code-as-Source-of-Truth:** Your YAML/Markdown files are the master copy.
+* **Git-Friendly:** Designed to work perfectly with Git. Review changes with `git diff` before pushing to Anki.
+* **Smart Sync:** Uses **SQLite** based state tracking and Hash comparison to update only changed notes, ensuring speed and efficiency.
+* **Scoped Pull:** Pull only the specific decks or note types you need using powerful Anki queries.
+* **Round-trip Editing:**
+  * **Push:** Edit YAML -> Sync to Anki.
+  * **Pull:** Edit in Anki -> Pull to YAML (preserves comments and formatting).
 
 ---
 
@@ -23,26 +23,29 @@ It enables you to treat your knowledge base like a software project: use Git for
 
 ### Prerequisites
 
-1.  **Anki Desktop**: Installed and running.
-2.  **AnkiConnect**: Install this add-on in Anki (Code: `2055492159`).
-3.  **Python 3.10+**: Installed on your system.
+1. **Anki Desktop**: Installed and running.
+2. **AnkiConnect**: Install this add-on in Anki (Code: `2055492159`).
+3. **Python 3.10+**: Installed on your system.
 
 ### Setup
 
-1.  **Clone the repository:**
+1. **Clone the repository:**
+
     ```bash
     git clone https://github.com/hieucao/anki-vibe.git
     cd anki-vibe
     ```
 
-2.  **Install dependencies (using Poetry):**
+2. **Install dependencies (using Poetry):**
+
     ```bash
     pip install poetry
     poetry install
     ```
 
-3.  **Setup System-wide Command (Optional but Recommended):**
+3. **Setup System-wide Command (Optional but Recommended):**
     This allows you to run `anki-vibe` from any terminal directory.
+
     ```bash
     mkdir -p ~/.local/bin
     # Create a wrapper script
@@ -130,9 +133,10 @@ anki-vibe sync
 | `anki-vibe info` | Show connection status and available decks. |
 
 **Options:**
-- `--yes` / `-y`: Skip confirmation prompts (useful for scripts).
-- `--dry-run`: Simulate sync without modifying Anki (Sync only).
-- `--profile`: Force legacy mode (Monorepo) targeting a specific profile.
+
+* `--yes` / `-y`: Skip confirmation prompts (useful for scripts).
+* `--dry-run`: Simulate sync without modifying Anki (Sync only).
+* `--profile`: Force legacy mode (Monorepo) targeting a specific profile.
 
 ---
 
@@ -140,14 +144,14 @@ anki-vibe sync
 
 Anki Vibe supports two modes:
 
-1.  **Project Mode (Recommended):**
-    *   Context defined by `anki-vibe.toml` in the current directory.
-    *   State tracked in local `.anki_vibe.db`.
-    *   Only pulls/syncs specific targets defined in config.
+1. **Project Mode (Recommended):**
+    * Context defined by `anki-vibe.toml` in the current directory.
+    * State tracked in local `.anki_vibe.db`.
+    * Only pulls/syncs specific targets defined in config.
 
-2.  **Monorepo Mode (Legacy):**
-    *   Targeted by `anki-vibe sync --profile <Name>`.
-    *   Syncs **ALL** models and decks in that profile.
-    *   Data stored in centralized `data/anki/<Profile>` folder.
+2. **Monorepo Mode (Legacy):**
+    * Targeted by `anki-vibe sync --profile <Name>`.
+    * Syncs **ALL** models and decks in that profile.
+    * Data stored in centralized `data/anki/<Profile>` folder.
 
 For detailed architecture, see [docs/architecture_and_workflow.md](docs/architecture_and_workflow.md).

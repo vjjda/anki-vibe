@@ -1,2 +1,5 @@
 anki_model_name: Basic (optional reversed card)
 description: Auto-generated config for model 'Basic (optional reversed card)'
+templates:
+  Card 1: card_1
+  Card 2: card_2
