@@ -5,6 +5,7 @@ from rich.console import Console
 from typing import Optional
 from src.core.config import settings
 from src.core.anki_detector import detect_active_profile
+from src.adapters import AnkiConnectAdapter
 
 app = typer.Typer(
     name="anki-vibe",
@@ -105,17 +106,46 @@ def pull(
     console.print("[green]✅ Pull process finished (simulation). Check git diff![/green]")
 
 @app.command()
+@app.command()
 def info() -> None:
     """
-    Show current project configuration.
+    Show current project configuration and Anki connection status.
     """
     console.print(f"[bold]Project:[/bold] {settings.PROJECT_NAME}")
-    console.print(f"[bold]AnkiConnect:[/bold] {settings.ANKI_CONNECT_URL}")
+    console.print(f"[bold]AnkiConnect URL:[/bold] {settings.ANKI_CONNECT_URL}")
     
-    active = detect_active_profile()
-    status = f"[green]{active}[/green]" if active else "[red]Not detected / Anki Closed[/red]"
-    console.print(f"[bold]Active Anki Profile:[/bold] {status}")
+    # 1. Detect Active Window
+    active_profile = detect_active_profile()
+    status_color = "green" if active_profile else "red"
+    console.print(f"[bold]Detected Window Profile:[/bold] [{status_color}]{active_profile or 'Not Detected'}[/{status_color}]")
 
+    # 2. Test Connection
+    console.print("\n[dim]Testing connection to AnkiConnect...[/dim]")
+    adapter = AnkiConnectAdapter()
+    
+    try:
+        version = adapter.ping()
+        console.print(f"✅ [bold green]Connected:[/bold green] {version}")
+        
+        # Nếu đã kết nối, thử lấy danh sách Decks
+        decks = adapter.get_deck_names()
+        console.print(f"[bold]Available Decks ({len(decks)}):[/bold]")
+        for deck in decks[:5]: # Chỉ hiện 5 deck đầu
+            console.print(f"  - {deck}")
+        if len(decks) > 5:
+            console.print(f"  ... and {len(decks) - 5} more.")
+
+        # Thử lấy danh sách Models
+        models = adapter.get_model_names()
+        console.print(f"[bold]Available Note Types ({len(models)}):[/bold]")
+        for model in models[:5]:
+            console.print(f"  - {model}")
+            
+    except ConnectionError:
+        console.print("❌ [bold red]Connection Failed:[/bold red] Anki is not running or AnkiConnect is not installed.")
+    except Exception as e:
+        console.print(f"❌ [bold red]Error:[/bold red] {e}")
+        
 def main() -> None:
     app()
 
