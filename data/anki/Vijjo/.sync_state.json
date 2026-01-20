@@ -8,12 +8,13 @@
     "Basic Quizlet": "e53fc704c00279c5545bd7fc18ae8bd9",
     "Sinhala": "6ba02168bc729212ab5752c5279952c0",
     "Basic (optional reversed card)": "d9c7a69c1b7d6c0a7d40fbf42ab4375f",
-    "Basic": "a6003dcfd48a3fa1a81055b12dbde381",
+    "Basic": "053b74526aa8611872115566ddf3f1af",
     "Basic (type in the answer)": "a6003dcfd48a3fa1a81055b12dbde381",
     "Sinhala Vocab": "d2113163b9016a15380fb1b7b156f98f",
     "Sinhala Basic": "d2113163b9016a15380fb1b7b156f98f",
     "Basic (and reversed card)": "d9c7a69c1b7d6c0a7d40fbf42ab4375f",
-    "Enhanced Cloze 2.1 v2": "534dd7087231b5db3e6ae2586941ed90"
+    "Enhanced Cloze 2.1 v2": "534dd7087231b5db3e6ae2586941ed90",
+    "Image Occlusion Enhanced": "efbdf91d73b90f95a7ff7ca7f95b75f3"
   },
   "notes": {
     "1623499616474": "e2b30889faeca512592720da0e6baf80",
@@ -5601,6 +5602,9 @@
     "1741547007527": "79cfbba9f0f10bd257b9601ceae52f41",
     "1741547013237": "4c6a259beeee65c37e5aa89f1d595168",
     "1741547019047": "30bb6655370fbba13bcaafa27ac14393",
-    "1741547025057": "f7fb1a1e33175d77cc40b2f672fcb5ff"
+    "1741547025057": "f7fb1a1e33175d77cc40b2f672fcb5ff",
+    "1768915240877": "c3ef42c54fd61ab20765c0ff0e8a3c4e",
+    "1768915240880": "e511c91e1b5bf6fddd1d9a6d6d8a9692",
+    "1768915240881": "c1dbf256c3ba51fc7082cd5718b3b2d3"
   }
 }

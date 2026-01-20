@@ -120,6 +120,23 @@ class AnkiConnectAdapter:
         return self._invoke("modelStyling", modelName=model_name)
 
     # =========================================================================
+    # DECK OPERATIONS
+    # =========================================================================
+
+    def create_deck(self, deck_name: str) -> int:
+        """
+        Tạo Deck mới.
+        Returns: ID của Deck vừa tạo.
+        """
+        return self._invoke("createDeck", deck=deck_name)
+
+    def delete_decks(self, deck_names: List[str]) -> None:
+        """
+        Xóa danh sách Decks.
+        """
+        self._invoke("deleteDecks", decks=deck_names, cardsToo=True)
+
+    # =========================================================================
     # DATA RETRIEVAL (Notes)
     # =========================================================================
 

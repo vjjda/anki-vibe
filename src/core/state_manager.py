@@ -13,7 +13,7 @@ class StateManager:
     """
     def __init__(self, profile_name: str):
         self.profile = profile_name
-        self.state_file = settings.DATA_DIR / profile_name / ".sync_state.json"
+        self.state_file = settings.ANKI_DATA_DIR / profile_name / ".sync_state.json"
         self.state = self._load_state()
 
     def _load_state(self) -> Dict[str, Any]:

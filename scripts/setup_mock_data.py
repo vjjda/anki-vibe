@@ -19,7 +19,7 @@ def create_mock_data():
 
     # 1. Tạo folder Project mới
     # Chúng ta đặt tên folder là "Demo_Project"
-    project_dir = settings.DATA_DIR / profile / "Demo_Project"
+    project_dir = settings.ANKI_DATA_DIR / profile / "Demo_Project"
     project_dir.mkdir(parents=True, exist_ok=True)
 
     # 2. Tạo config.yaml
