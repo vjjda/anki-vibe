@@ -1,24 +1,41 @@
 # Path: .gitignore
-# Python
+# --- Python & Environment ---
 __pycache__/
 *.py[cod]
 *$py.class
-
-# Virtual Environment
 .venv/
 venv/
 env/
-
-# Environment Variables
 .env
 
-# IDEs
+# --- IDEs & System ---
 .vscode/
 .idea/
-
-# Anki Data (Local testing)
-*.apkg
-*.colpkg
-
-# System
 .DS_Store
+
+# --- Project Logs ---
+# Ignore tất cả file trong folder logs
+logs/*
+# Nhưng giữ lại file .gitkeep để git biết folder này tồn tại
+!logs/.gitkeep
+
+# --- Anki Data ---
+# 1. Chúng ta GIỮ LẠI (Commit) các file text (YAML, CSS, HTML, JSON)
+# (Không cần viết rule gì cả, mặc định git sẽ lấy)
+
+# 2. Chúng ta BỎ QUA (Ignore) các file Media nặng nếu lỡ có copy vào
+data/**/*.png
+data/**/*.jpg
+data/**/*.jpeg
+data/**/*.gif
+data/**/*.mp3
+data/**/*.wav
+data/**/*.mp4
+data/**/*.mov
+data/**/*.apkg
+data/**/*.colpkg
+
+# --- Testing / Temporary ---
+# Nếu bạn có folder data nháp để test
+data/sandbox/
+scripts/test_output/
