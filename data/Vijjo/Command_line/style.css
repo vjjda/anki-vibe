@@ -1,0 +1,27 @@
+.card {
+ font-family: arial;
+ font-size: 20px;
+ text-align: center;
+ color: black;
+ background-color: white;
+	max-width: 600px;
+margin:10rem auto;
+padding: 20px;
+}
+
+.command input {
+    border: 2px solid #4CAF50;   /* viền xanh lá */
+    border-radius: 6px;          /* bo tròn góc */
+    padding: 6px 10px;           /* khoảng cách trong */
+    font-size: 18px;             /* cỡ chữ */
+    color: #222;                 /* màu chữ */
+    background-color: #f9f9f9;   /* nền */
+	text-align: center;
+	max-width: 80%;
+}
+
+.command input:focus {
+    border-color: #2196F3;       /* khi focus thì viền xanh dương */
+    outline: none;               /* bỏ viền mặc định */
+    background-color: #fff;
+}

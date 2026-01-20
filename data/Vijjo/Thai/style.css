@@ -1,0 +1,234 @@
+
+.card {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: black;
+    background-color: white;
+}
+
+.nightMode .card {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+}
+
+.thai-word {
+    font-family: "Iskoola Pota", "Nirmala UI", sans-serif;
+    font-size: 48px;
+    color: #0077cc;
+    margin-bottom: 10px;
+}
+
+.nightMode .thai-word { color: #4da6ff; }
+
+.transliteration {
+    font-size: 18px;
+    color: lightgray;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.english-word {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+}
+
+.nightMode .english-word { color: #ddd; }
+
+.audio-container { margin-top: 15px; }
+
+.prompt {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+hr { border: 0; border-top: 1px solid #ddd; margin: 20px 0; }
+.nightMode hr { border-top: 1px solid #555; }
+
+
+.ipa {
+    font-family: "Gentium Plus", "Charis SIL", "Doulos SIL", "Arial Unicode MS", sans-serif;
+    font-size: 1em;
+    color: lightgray;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+
+.ipa {
+    font-family: "Gentium Plus", "Charis SIL", "Arial Unicode MS", sans-serif;
+    font-size: 0.9em;
+    margin-top: 5px;
+    line-height: 1.6;
+}
+.tone-mid { color: #555555; }          /* Mid: Grey/Black */
+.tone-low { color: #00008B; }          /* Low: Dark Blue */
+.tone-falling { color: #006400; }      /* Falling: Dark Green */
+.tone-high { color: #DC143C; }         /* High: Crimson Red */
+.tone-rising { color: #D2691E; }       /* Rising: Chocolate/Orange */
+.word-group { display: inline-block; margin-right: 0.5em; } /* Keep words together */
+
+
+.transliteration {
+    font-family: "Gentium Plus", "Charis SIL", "Arial Unicode MS", sans-serif;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+.word-group { 
+    display: inline-block; 
+    margin-right: 15px; /* Clear spacing between words */
+    white-space: nowrap; /* Keep phonetic word on one line */
+}
+.tone-mid { color: #555555; }          /* Mid: Grey/Black */
+.tone-low { color: #00008B; }          /* Low: Dark Blue */
+.tone-falling { color: #006400; }      /* Falling: Dark Green */
+.tone-high { color: #DC143C; }         /* High: Crimson Red */
+.tone-rising { color: #D2691E; }       /* Rising: Chocolate/Orange */
+
+
+.transliteration {
+    font-family: "Gentium Plus", "Charis SIL", "Arial Unicode MS", sans-serif;
+    font-size: 1.2em; /* Larger */
+    line-height: 1.6;
+    font-weight: 500;
+}
+.word-group { 
+    display: inline-block; 
+    margin-right: 20px; /* Wider gap */
+    white-space: nowrap; 
+}
+
+.transliteration {
+    font-family: "Gentium Plus", "Charis SIL", "Arial Unicode MS", sans-serif;
+    font-size: 1.2em;
+    line-height: 1.6;
+    font-weight: 500;
+}
+.word-group { 
+    display: inline-block; 
+    margin-right: 20px; 
+    white-space: nowrap; 
+}
+
+/* --- LIGHT MODE COLORS --- */
+.tone-mid { color: #212121; }          /* Black */
+.tone-low { color: #006064; }          /* Dark Teal */
+.tone-falling { color: #1B5E20; }      /* Dark Green */
+.tone-high { color: #B71C1C; }         /* Dark Red */
+.tone-rising { color: #E65100; }       /* Dark Orange */
+
+/* --- NIGHT MODE COLORS (Anki uses .nightMode class) --- */
+.nightMode .tone-mid { color: #E0E0E0; }      /* Light Grey */
+.nightMode .tone-low { color: #4DD0E1; }      /* Light Cyan */
+.nightMode .tone-falling { color: #81C784; }  /* Light Green */
+.nightMode .tone-high { color: #E57373; }     /* Light Red */
+.nightMode .tone-rising { color: #FFB74D; }   /* Light Orange */
+
+
+.transliteration {
+    font-family: "Gentium Plus", "Charis SIL", "Arial Unicode MS", sans-serif;
+    font-size: 1.2em;
+    line-height: 1.6;
+    font-weight: 500;
+}
+.word-group { 
+    display: inline-block; 
+    margin-right: 12px; /* Gap between WORDS */
+    white-space: nowrap; 
+}
+.special-char {
+    display: inline-block;
+    margin-right: 8px;
+    margin-left: 8px;
+    font-weight: bold;
+    color: #888;
+}
+
+/* Colors */
+.tone-mid { color: #212121; }          
+.tone-low { color: #006064; }          
+.tone-falling { color: #1B5E20; }      
+.tone-high { color: #B71C1C; }         
+.tone-rising { color: #E65100; }       
+
+.nightMode .tone-mid { color: #E0E0E0; }      
+.nightMode .tone-low { color: #4DD0E1; }      
+.nightMode .tone-falling { color: #81C784; }  
+.nightMode .tone-high { color: #E57373; }     
+.nightMode .tone-rising { color: #FFB74D; }   
+.nightMode .special-char { color: #aaa; }
+
+
+.transliteration {
+    /* Container settings */
+    font-family: "Gentium Plus", "Charis SIL", "Arial Unicode MS", sans-serif;
+    line-height: 1.2;
+}
+.word-pair {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: top; /* Ensure alignment with text flow */
+    margin-right: 12px;
+    margin-bottom: 8px; /* Spacing for multiline wrap */
+}
+.thai-seg {
+    font-family: "Iskoola Pota", "Nirmala UI", sans-serif; /* Thai font */
+    font-size: 0.8em; /* Slightly smaller than main word to fit context */
+    color: #0077cc; /* Blueish for contrast */
+    margin-bottom: 2px;
+}
+.phonetic-seg {
+    font-size: 0.8em;
+    font-weight: 500;
+}
+.special-char-pair {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: top;
+    margin: 0 5px;
+}
+.special-char-top { visibility: hidden; font-size: 0.5em; } /* Spacer */
+.special-char-bottom { font-weight: bold; color: #888; font-size: 1.2em; }
+
+/* Tone Colors */
+.tone-mid { color: #212121; }          
+.tone-low { color: #006064; }          
+.tone-falling { color: #1B5E20; }      
+.tone-high { color: #B71C1C; }         
+.tone-rising { color: #E65100; }       
+
+/* Dark Mode */
+.nightMode .thai-seg { color: #64B5F6; }
+.nightMode .tone-mid { color: #E0E0E0; }      
+.nightMode .tone-low { color: #4DD0E1; }      
+.nightMode .tone-falling { color: #81C784; }  
+.nightMode .tone-high { color: #E57373; }     
+.nightMode .tone-rising { color: #FFB74D; }   
+.nightMode .special-char-bottom { color: #aaa; }
+
+
+    .trans-container {
+        display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+        line-height: 1.2; font-family: "Gentium Plus", sans-serif;
+    }
+    .pair { display: inline-flex; flex-direction: column; align-items: center; }
+    .t-seg { color: #0077cc; font-size: 0.9em; margin-bottom: 3px; font-family: "Iskoola Pota"; }
+    .p-seg { font-size: 1.1em; font-weight: 500; white-space: nowrap; }
+    .sp-char { color: #888; font-weight: bold; font-size: 1.2em; align-self: center; }
+    
+    /* Tone Colors */
+    .tm { color: #212121; } .tl { color: #006064; } .tf { color: #1B5E20; }
+    .th { color: #B71C1C; } .tr { color: #E65100; }
+    
+    .nightMode .t-seg { color: #64B5F6; }
+    .nightMode .tm { color: #E0E0E0; } .nightMode .tl { color: #4DD0E1; }
+    .nightMode .tf { color: #81C784; } .nightMode .th { color: #E57373; }
+    .nightMode .tr { color: #FFB74D; }
+    

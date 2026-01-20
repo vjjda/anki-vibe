@@ -1,0 +1,11 @@
+- deck: "English::Lesson 1"
+  tags: ["noun", "fruit"]
+  fields:
+    Front: "Apple"
+    Back: "Quả táo <br> <img src='apple.png'>"
+
+- deck: "English::Lesson 1"
+  tags: ["verb"]
+  fields:
+    Front: "To Run"
+    Back: "Chạy"
