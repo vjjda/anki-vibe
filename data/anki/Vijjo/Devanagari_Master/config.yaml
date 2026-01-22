@@ -1,0 +1,4 @@
+anki_model_name: Devanagari_Master
+description: Auto-generated config for model 'Devanagari_Master'
+templates:
+  Card 1: card_1

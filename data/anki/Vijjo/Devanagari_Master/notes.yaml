@@ -1,0 +1,1110 @@
+  - id: 1769080979706
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: अ
+      Name: a
+      IPA: ə
+      Category: Vowel
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: |-
+        <img src="Devanagari अ stroke order.svg">
+      Examples: अनित्य | अनात्मन् | अहिंसा
+      Example_Audio_Source: अनित्य, अनात्मन्, अहिंसा
+      Image_Stroke_1: ''
+      Image_Stroke_2: |-
+        <img src="Devanagari a अ.gif">
+      Example_IPAs: ən̪ɪt̪jə | ən̪ɑːt̪mən̪ | əɦɪ̃s̪ɑː
+      Example_Meanings: Impermanence | Non-self (Anatta) | Non-violence
+      Audio_Character: '[sound:Devanagari_Char_a.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-2c940d9bd2ad168e95b672720d8fe10d6e7bcf13983f28efcce957f3.mp3]
+  - id: 1769080979707
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: आ
+      Name: ā
+      IPA: ɑː
+      Category: Vowel
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: |-
+        <img src="Devanagari आ stroke order.svg">
+      Examples: आनन्द | आर्य | आलयविज्ञान
+      Example_Audio_Source: आनन्द, आर्य, आलयविज्ञान
+      Image_Stroke_1: ''
+      Image_Stroke_2: |-
+        <img src="Devanagari aa आ.gif">
+      Example_IPAs: ɑːn̪ən̪d̪ə | ɑːɾjə | ɑːləjəʋɪd͡ʒɲɑːn̪ə
+      Example_Meanings: Bliss/Joy | Noble | Storehouse Consciousness
+      Audio_Character: '[sound:Devanagari_Char_ā.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-96e79c5d2f875ae7843d0c8a7bce3f777544e30e03d48ad9a744b200.mp3]
+  - id: 1769080979708
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: इ
+      Name: i
+      IPA: ɪ
+      Category: Vowel
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: |-
+        <img src="Devanagari इ stroke order.svg">
+      Examples: इन्द्रिय | इतिवुत्तक
+      Example_Audio_Source: इन्द्रिय, इतिवुत्तक
+      Image_Stroke_1: ''
+      Image_Stroke_2: |-
+        <img src="Devanagari i इ.gif">
+      Example_IPAs: ɪn̪d̪ɾɪjə | ɪt̪ɪʋut̪t̪əkə
+      Example_Meanings: Faculty/Sense | So it was said (Scripture)
+      Audio_Character: '[sound:Devanagari_Char_i.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-1fde6d21baeeff635bab9f0bb3e3d920765f4b30956fabfa094c4086.mp3]
+  - id: 1769080979709
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ई
+      Name: ī
+      IPA: iː
+      Category: Vowel
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: |-
+        <img src="Devanagari ई stroke order.svg">
+      Examples: ईश्वर | ईर्ष्‍या
+      Example_Audio_Source: ईश्वर, ईर्ष्‍या
+      Image_Stroke_1: ''
+      Image_Stroke_2: |-
+        <img src="Devanagari ii ई.gif">
+      Example_IPAs: iːʃʋəɾə | iːɾʂjɑː
+      Example_Meanings: Lord/God (refuted in Buddhism) | Jealousy
+      Audio_Character: '[sound:Devanagari_Char_ī.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-adcd80dd9f61e09bce465ad9c1f0a5c01e59a83b171cf6b54c3897a4.mp3]
+  - id: 1769080979710
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: उ
+      Name: u
+      IPA: u
+      Category: Vowel
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: |-
+        <img src="Devanagari उ stroke order.svg">
+      Examples: उपादान | उपाय
+      Example_Audio_Source: उपादान, उपाय
+      Image_Stroke_1: ''
+      Image_Stroke_2: |-
+        <img src="Devanagari u उ.gif">
+      Example_IPAs: upɑːd̪ɑːn̪ə | upɑːjə
+      Example_Meanings: Clinging/Grasping | Skillful Means
+      Audio_Character: '[sound:Devanagari_Char_u.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-e420216719bd8f4bb1d8ed6562abde2f0115f914e7c6f54426607105.mp3]
+  - id: 1769080979711
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ऊ
+      Name: ū
+      IPA: uː
+      Category: Vowel
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: |-
+        <img src="Devanagari ऊ stroke order.svg">
+      Examples: ऊर्ण | ऊर्ध्व
+      Example_Audio_Source: ऊर्ण, ऊर्ध्व
+      Image_Stroke_1: ''
+      Image_Stroke_2: |-
+        <img src="Devanagari uu ऊ.gif">
+      Example_IPAs: uːɾɳə | uːɾd̪ʰʋə
+      Example_Meanings: Tuft of hair (32 marks) | Upwards
+      Audio_Character: '[sound:Devanagari_Char_ū.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-27fe71f1c6316496e5feb10a05b67cea41666997d8054aa37cfcd77b.mp3]
+  - id: 1769080979712
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ऋ
+      Name: r̥
+      IPA: ɾɨ
+      Category: Vowel
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: |-
+        <img src="Devanagari ऋ stroke order.svg">
+      Examples: ऋद्धि | ऋषि
+      Example_Audio_Source: ऋद्धि, ऋषि
+      Image_Stroke_1: ''
+      Image_Stroke_2: |-
+        <img src="Devanagari r ऋ.gif">
+      Example_IPAs: ɾɨd̪d̪ʰɪ | ɾɨʂɪ
+      Example_Meanings: Psychic Power | Seer/Sage
+      Audio_Character: '[sound:Devanagari_Char_r̥.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-8067b6ac548b4afbd6be0c85f6727c6bb34db6b27272f0824e9c6c3f.mp3]
+  - id: 1769080979713
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ए
+      Name: ē
+      IPA: eː
+      Category: Vowel
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: |-
+        <img src="Devanagari ए stroke order.svg">
+      Examples: एकचित्त | एकाग्रता
+      Example_Audio_Source: एकचित्त, एकाग्रता
+      Image_Stroke_1: ''
+      Image_Stroke_2: |-
+        <img src="Devanagari e ए.gif">
+      Example_IPAs: eːkət͡ʃɪt̪t̪ə | eːkɑːgɾət̪ɑː
+      Example_Meanings: One-pointedness of mind | Concentration
+      Audio_Character: '[sound:Devanagari_Char_ē.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-ca5401e0e2e4b72dfbb1960112e4c01dc69c5c531f01e0d096aa39a4.mp3]
+  - id: 1769080979714
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ऐ
+      Name: ai
+      IPA: əɪ
+      Category: Vowel
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: |-
+        <img src="Devanagari ऐ stroke order.svg">
+      Examples: ऐरावत | ऐश्वर्य
+      Example_Audio_Source: ऐरावत, ऐश्वर्य
+      Image_Stroke_1: ''
+      Image_Stroke_2: |-
+        <img src="Devanagari ɛ ऐ.gif">
+      Example_IPAs: əɪɾɑːʋət̪ə | əɪʃʋəɾjə
+      Example_Meanings: Airavata (Elephant) | Sovereignty
+      Audio_Character: '[sound:Devanagari_Char_ai.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-56156536cf009557576135d20fc1917995381b227261d0aee8d51a72.mp3]
+  - id: 1769080979715
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ओ
+      Name: ō
+      IPA: oː
+      Category: Vowel
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: |-
+        <img src="Devanagari ओ stroke order.svg">
+      Examples: ओजस् | ओघ
+      Example_Audio_Source: ओजस्, ओघ
+      Image_Stroke_1: ''
+      Image_Stroke_2: |-
+        <img src="Devanagari o ओ.gif">
+      Example_IPAs: oːd͡ʒəs̪ | oːgʰə
+      Example_Meanings: Vigor/Vitality | Flood (of passions)
+      Audio_Character: '[sound:Devanagari_Char_ō.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-e296c3528c38ec4e29375800d236b1c9d857a5d064c7a9b80bbe009a.mp3]
+  - id: 1769080979716
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: औ
+      Name: au
+      IPA: əu
+      Category: Vowel
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: |-
+        <img src="Devanagari औ stroke order.svg">
+      Examples: औपपातिक | औषध
+      Example_Audio_Source: औपपातिक, औषध
+      Image_Stroke_1: ''
+      Image_Stroke_2: |-
+        <img src="Devanagari au औ.gif">
+      Example_IPAs: əupəpɑːt̪ɪkə | əuʂəd̪ʰə
+      Example_Meanings: Spontaneously born | Medicine
+      Audio_Character: '[sound:Devanagari_Char_au.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-481f5eb0186c392e09655631389faec5e82be245894f891c3b7a585a.mp3]
+  - id: 1769080979717
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: अं
+      Name: aṁ
+      IPA: ə̃
+      Category: Vowel
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: अंग | अंत
+      Example_Audio_Source: अंग, अंत
+      Image_Stroke_1: ''
+      Image_Stroke_2: ''
+      Example_IPAs: ə̃gə | ə̃t̪ə
+      Example_Meanings: Limb/Part | End/Goal
+      Audio_Character: '[sound:Devanagari_Char_aṁ.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-50f35bd550b740d8b9d01ac521402e887430ae229cb01cf41c5cb9da.mp3]
+  - id: 1769080979718
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: अः
+      Name: aḥ
+      IPA: əhə̆
+      Category: Vowel
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+      Image_Stroke_1: ''
+      Image_Stroke_2: ''
+      Example_IPAs: ''
+      Example_Meanings: ''
+      Audio_Character: '[sound:Devanagari_Char_aḥ.mp3]'
+      Audio_Examples: ''
+  - id: 1769080979719
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: क
+      Name: ka
+      IPA: kə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: करुणा | कर्म | क्लेश
+      Example_Audio_Source: करुणा, कर्म, क्लेश
+      Image_Stroke_1: |-
+        <img src="Deva-क-order.gif">
+      Image_Stroke_2: |-
+        <img src="Devanagari k क.gif">
+      Example_IPAs: kəɾuɳɑː | kəɾmə | kleːʃə
+      Example_Meanings: Compassion | Karma (Action) | Defilement
+      Audio_Character: '[sound:Devanagari_Char_ka.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-384c28fd05ae09ebce2f43e83026465a6599d3a8240a46ce378a1a76.mp3]
+  - id: 1769080979720
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ख
+      Name: kha
+      IPA: kʰə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: ख | खण्ड
+      Example_Audio_Source: ख, खण्ड
+      Image_Stroke_1: |-
+        <img src="Deva-ख-order.gif">
+      Image_Stroke_2: |-
+        <img src="Devanagari kh ख.gif">
+      Example_IPAs: kʰə | kʰəɳɖə
+      Example_Meanings: Space/Void | Group/Aggregate (Khandha)
+      Audio_Character: '[sound:Devanagari_Char_kha.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-b2da1f688a27756d6011496e3694b5681766ef8ea4dfe909b92cca94.mp3]
+  - id: 1769080979721
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ग
+      Name: ga
+      IPA: gə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: गति | गाथा | गृध्रकूट
+      Example_Audio_Source: गति, गाथा, गृध्रकूट
+      Image_Stroke_1: |-
+        <img src="Deva-ग-order.gif">
+      Image_Stroke_2: |-
+        <img src="Devanagari g ग.gif">
+      Example_IPAs: gət̪ɪ | gɑːt̪ʰɑː | gɾɨd̪ʰɾəkuːʈə
+      Example_Meanings: Realm of existence | Verse | Vulture Peak
+      Audio_Character: '[sound:Devanagari_Char_ga.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-1a921c93959656c1f4164ba3feceeee525149c81cea37971abf7f1b6.mp3]
+  - id: 1769080979722
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: घ
+      Name: gha
+      IPA: gʰə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: घण्टा | घ्राण
+      Example_Audio_Source: घण्टा, घ्राण
+      Image_Stroke_1: |-
+        <img src="Deva-घ-order.gif">
+      Image_Stroke_2: |-
+        <img src="Devanagari gh घ.gif">
+      Example_IPAs: gʰəɳʈɑː | gʰɾɑːɳə
+      Example_Meanings: Bell | Nose (Sense)
+      Audio_Character: '[sound:Devanagari_Char_gha.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-a09ee035b22002be5636d643a495e95bd06fecf04ebc96deafc58b8d.mp3]
+  - id: 1769080979723
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ङ
+      Name: ṅa
+      IPA: ŋə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+      Image_Stroke_1: |-
+        <img src="Deva-ङ-order.gif">
+      Image_Stroke_2: ''
+      Example_IPAs: ''
+      Example_Meanings: ''
+      Audio_Character: '[sound:Devanagari_Char_ṅa.mp3]'
+      Audio_Examples: ''
+  - id: 1769080979724
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: च
+      Name: ca
+      IPA: t͡ʃə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: चित्त | चक्र | चक्षु
+      Example_Audio_Source: चित्त, चक्र, चक्षु
+      Image_Stroke_1: |-
+        <img src="Deva-च-order.gif">
+      Image_Stroke_2: |-
+        <img src="Devanagari tch च.gif">
+      Example_IPAs: t͡ʃɪt̪t̪ə | t͡ʃəkɾə | t͡ʃəkʂu
+      Example_Meanings: Mind/Consciousness | Wheel (Dharma) | Eye
+      Audio_Character: '[sound:Devanagari_Char_ca.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-cfd77546eb44961ac314efa249273df9a2fcbbcbbe5d2838905a9842.mp3]
+  - id: 1769080979725
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: छ
+      Name: cha
+      IPA: t͡ʃʰə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: छन्द | छाया
+      Example_Audio_Source: छन्द, छाया
+      Image_Stroke_1: |-
+        <img src="Deva-छ-order.gif">
+      Image_Stroke_2: |-
+        <img src="Devanagari tchh छ.gif">
+      Example_IPAs: t͡ʃʰən̪d̪ə | t͡ʃʰɑːjɑː
+      Example_Meanings: Desire/Impulse | Shadow
+      Audio_Character: '[sound:Devanagari_Char_cha.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-652a3a84c6e422d497882784242ba82e4495406ad2e1964c7176d8d5.mp3]
+  - id: 1769080979726
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ज
+      Name: ja
+      IPA: d͡ʒə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: जरा | जाति | ज्ञान
+      Example_Audio_Source: जरा, जाति, ज्ञान
+      Image_Stroke_1: |-
+        <img src="Deva-ज-order.gif">
+      Image_Stroke_2: |-
+        <img src="Devanagari dʒ ज.gif">
+      Example_IPAs: d͡ʒəɾɑː | d͡ʒɑːt̪ɪ | d͡ʒɲɑːn̪ə
+      Example_Meanings: Old age/Decay | Birth | Gnosis/Knowledge
+      Audio_Character: '[sound:Devanagari_Char_ja.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-a76d3a4957533f5a852bf1953e461ae190b5af6490ebffe8594f401d.mp3]
+  - id: 1769080979727
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: झ
+      Name: jha
+      IPA: d͡ʒʰə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: |-
+        <img src="Devanagari झ stroke order.svg">
+      Examples: ध्यान
+      Example_Audio_Source: ध्यान
+      Image_Stroke_1: |-
+        <img src="Deva-झ-order.gif">
+      Image_Stroke_2: |-
+        <img src="Devanagari dʒʰ झ.gif">
+      Example_IPAs: d̪ʰjɑːn̪ə
+      Example_Meanings: |-
+        Jhana (Meditation) - (Pali Jhana maps to Skt Dhyana, but Jha sound related)
+      Audio_Character: '[sound:Devanagari_Char_jha.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-4f6747e4886dee652e8010798a9baf705008c057583c670d64a34221.mp3]
+  - id: 1769080979728
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ञ
+      Name: ña
+      IPA: ɲə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: ज्ञान
+      Example_Audio_Source: ज्ञान
+      Image_Stroke_1: |-
+        <img src="Deva-ञ-order.gif">
+      Image_Stroke_2: |-
+        <img src="Devanagari ɲ ञ.gif">
+      Example_IPAs: d͡ʒɲɑːn̪ə
+      Example_Meanings: Jnana (Knowledge) - contains Nya
+      Audio_Character: '[sound:Devanagari_Char_ña.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-214533c09c8b8d14ad8227c833794a837e538748108020120fb151ce.mp3]
+  - id: 1769080979729
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ट
+      Name: ṭa
+      IPA: ʈə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: ट
+      Example_Audio_Source: ट
+      Image_Stroke_1: |-
+        <img src="Deva-ट-order.gif">
+      Image_Stroke_2: |-
+        <img src="Devanagari t̥ ट.gif">
+      Example_IPAs: ʈə
+      Example_Meanings: Ta (Sound)
+      Audio_Character: '[sound:Devanagari_Char_ṭa.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-fdb20f1b56801d4c03ed630a36a4419d32273001fd41953457b73965.mp3]
+  - id: 1769080979730
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ठ
+      Name: ṭha
+      IPA: ʈʰə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: ठ
+      Example_Audio_Source: ठ
+      Image_Stroke_1: |-
+        <img src="Deva-ठ-order.gif">
+      Image_Stroke_2: |-
+        <img src="Devanagari ʈʰ ठ.gif">
+      Example_IPAs: ʈʰə
+      Example_Meanings: Tha (Sound)
+      Audio_Character: '[sound:Devanagari_Char_ṭha.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-1464f5320f900fef5f70afdd7d884ccf0dc8da6275028ef0ba0d5c93.mp3]
+  - id: 1769080979731
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ड
+      Name: ḍa
+      IPA: ɖə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: डमरु
+      Example_Audio_Source: डमरु
+      Image_Stroke_1: |-
+        <img src="Deva-ड-order.gif">
+      Image_Stroke_2: |-
+        <img src="Devanagari ɖ ड.gif">
+      Example_IPAs: ɖəməɾu
+      Example_Meanings: Drum
+      Audio_Character: '[sound:Devanagari_Char_ḍa.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-86cde3cc3ea4188c12425734fb88d5b9d7106431b4f0e8d5e09330f0.mp3]
+  - id: 1769080979732
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ढ
+      Name: ḍha
+      IPA: ɖʰə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: ढ
+      Example_Audio_Source: ढ
+      Image_Stroke_1: |-
+        <img src="Deva-ढ-order.gif">
+      Image_Stroke_2: |-
+        <img src="Devanagari ɖʱ ढ.gif">
+      Example_IPAs: ɖʰə
+      Example_Meanings: Dha
+      Audio_Character: '[sound:Devanagari_Char_ḍha.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-c7c89a0ef94e40f0fe750c2d859506ce9fe901f41257e66f16bec7d5.mp3]
+  - id: 1769080979733
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ण
+      Name: ṇa
+      IPA: ɳə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: रण
+      Example_Audio_Source: रण
+      Image_Stroke_1: |-
+        <img src="Deva-ण-order.gif">
+      Image_Stroke_2: |-
+        <img src="Devanagari ɳ ण.gif">
+      Example_IPAs: ɾəɳə
+      Example_Meanings: Battle (Defilements) - suffix
+      Audio_Character: '[sound:Devanagari_Char_ṇa.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-54a3057b91d5e30004074065e7358a7e5788d066f2ae95730efbc129.mp3]
+  - id: 1769080979734
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: त
+      Name: ta
+      IPA: t̪ə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: तृष्णा | तथागत | तर्क
+      Example_Audio_Source: तृष्णा, तथागत, तर्क
+      Image_Stroke_1: |-
+        <img src="Deva-त-order.gif">
+      Image_Stroke_2: |-
+        <img src="Devanagari t त.gif">
+      Example_IPAs: t̪ɾɨʂɳɑː | t̪ət̪ʰɑːgət̪ə | t̪əɾkə
+      Example_Meanings: Craving (Tanha) | Tathagata | Logic/Debate
+      Audio_Character: '[sound:Devanagari_Char_ta.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-fbb861b01b41db48521753af7af3832dd75adf866ef8a9eb06782558.mp3]
+  - id: 1769080979735
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: थ
+      Name: tha
+      IPA: t̪ʰə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: थेरवाद
+      Example_Audio_Source: थेरवाद
+      Image_Stroke_1: |-
+        <img src="Deva-थ-order.gif">
+      Image_Stroke_2: |-
+        <img src="Devanagari tʰ थ.gif">
+      Example_IPAs: t̪ʰeːɾəʋɑːd̪ə
+      Example_Meanings: Theravada (Doctrine of Elders)
+      Audio_Character: '[sound:Devanagari_Char_tha.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-c5def38e58cb8cb20f476b0701457cdd6a51df3d89b5024daa8e59e9.mp3]
+  - id: 1769080979736
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: द
+      Name: da
+      IPA: d̪ə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: दुःख | दान | धर्म
+      Example_Audio_Source: दुःख, दान, धर्म
+      Image_Stroke_1: |-
+        <img src="Deva-द्म-order.gif">
+      Image_Stroke_2: |-
+        <img src="Devanagari d द.gif">
+      Example_IPAs: d̪uhŭkʰə | d̪ɑːn̪ə | d̪ʰəɾmə
+      Example_Meanings: Suffering (Dukkha) | Generosity | Dharma
+      Audio_Character: '[sound:Devanagari_Char_da.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-8e13242ff904abd3d09cfe85131f229ec80a009cec4a2df57dbd5fd5.mp3]
+  - id: 1769080979737
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ध
+      Name: dha
+      IPA: d̪ʰə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: धर्म | धातु | ध्यान
+      Example_Audio_Source: धर्म, धातु, ध्यान
+      Image_Stroke_1: |-
+        <img src="Deva-ध-order.gif">
+      Image_Stroke_2: |-
+        <img src="ध-order-example.gif">
+      Example_IPAs: d̪ʰəɾmə | d̪ʰɑːt̪u | d̪ʰjɑːn̪ə
+      Example_Meanings: Dharma (Law/Truth) | Element | Meditation
+      Audio_Character: '[sound:Devanagari_Char_dha.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-0797c2a5d940aa8af57b10e880171ea16bf6904b3c8781246b27630e.mp3]
+  - id: 1769080979738
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: न
+      Name: na
+      IPA: n̪ə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: निर्वाण | निरोध | नाम
+      Example_Audio_Source: निर्वाण, निरोध, नाम
+      Image_Stroke_1: |-
+        <img src="Deva-न-order.gif">
+      Image_Stroke_2: |-
+        <img src="Devanagari n न.gif">
+      Example_IPAs: n̪ɪɾʋɑːɳə | n̪ɪɾoːd̪ʰə | n̪ɑːmə
+      Example_Meanings: Nirvana | Cessation | Name (Nama)
+      Audio_Character: '[sound:Devanagari_Char_na.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-4c90337edd75cb64c08b0c06ded5cc165be7ff68470e6ca43aae4967.mp3]
+  - id: 1769080979739
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: प
+      Name: pa
+      IPA: pə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: प्रज्ञा | पारमिता | प्रतीत्यसमुत्पाद
+      Example_Audio_Source: प्रज्ञा, पारमिता, प्रतीत्यसमुत्पाद
+      Image_Stroke_1: |-
+        <img src="Deva-प-order.gif">
+      Image_Stroke_2: |-
+        <img src="Devanagari p प.gif">
+      Example_IPAs: pɾəd͡ʒɲɑː | pɑːɾəmɪt̪ɑː | pɾət̪iːt̪jəs̪əmut̪pɑːd̪ə
+      Example_Meanings: Wisdom (Prajna) | Perfection | Dependent Origination
+      Audio_Character: '[sound:Devanagari_Char_pa.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-c518204b2acd2baff7908853b8e3a23758f560e0e7e37de64bb57c50.mp3]
+  - id: 1769080979740
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: फ
+      Name: pha
+      IPA: pʰə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: फल | फुस्स
+      Example_Audio_Source: फल, फुस्स
+      Image_Stroke_1: ''
+      Image_Stroke_2: |-
+        <img src="Devanagari pʰ फ.gif">
+      Example_IPAs: pʰələ | pʰus̪s̪ə
+      Example_Meanings: Fruit (Result) | Touch/Contact
+      Audio_Character: '[sound:Devanagari_Char_pha.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-7ea49af90a3794daeb7a7e405ea8a2f4879e8fb8d932b7c89ca66266.mp3]
+  - id: 1769080979741
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ब
+      Name: ba
+      IPA: bə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: बुद्ध | बोधि | बोधिसत्त्व
+      Example_Audio_Source: बुद्ध, बोधि, बोधिसत्त्व
+      Image_Stroke_1: ''
+      Image_Stroke_2: |-
+        <img src="Devanagari b ब.gif">
+      Example_IPAs: bud̪d̪ʰə | boːd̪ʰɪ | boːd̪ʰɪs̪ət̪t̪ʋə
+      Example_Meanings: Buddha | Awakening | Bodhisattva
+      Audio_Character: '[sound:Devanagari_Char_ba.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-b083f78558ee241e88608d4e6e898d0f9ca9baff396c0ca0cdd2d9fa.mp3]
+  - id: 1769080979742
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: भ
+      Name: bha
+      IPA: bʰə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: भावना | भिक्षु | भूमि
+      Example_Audio_Source: भावना, भिक्षु, भूमि
+      Image_Stroke_1: ''
+      Image_Stroke_2: |-
+        <img src="Devanagari bʰ भ.gif">
+      Example_IPAs: bʰɑːʋən̪ɑː | bʰɪkʂu | bʰuːmɪ
+      Example_Meanings: Cultivation/Meditation | Monk | Ground/Stage
+      Audio_Character: '[sound:Devanagari_Char_bha.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-d725720e4d9746da4e397481a6c5ab3d1ef5565b45c3e4b56e2dae0e.mp3]
+  - id: 1769080979743
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: म
+      Name: ma
+      IPA: mə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: मैत्री | मोक्ष | महायान
+      Example_Audio_Source: मैत्री, मोक्ष, महायान
+      Image_Stroke_1: |-
+        <img src="Deva-द्म-order.gif">
+      Image_Stroke_2: |-
+        <img src="Devanagari m म.gif">
+      Example_IPAs: məɪt̪ɾiː | moːkʂə | məɦɑːjɑːn̪ə
+      Example_Meanings: Loving-kindness | Liberation | Great Vehicle
+      Audio_Character: '[sound:Devanagari_Char_ma.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-81b56f30079a831032d6341059c25e5c1b81ca18c55cd6371cc17cc5.mp3]
+  - id: 1769080979744
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: य
+      Name: ya
+      IPA: jə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: यान | योग | यक्ष
+      Example_Audio_Source: यान, योग, यक्ष
+      Image_Stroke_1: |-
+        <img src="Deva-य-order.gif">
+      Image_Stroke_2: |-
+        <img src="Devanagari j य.gif">
+      Example_IPAs: jɑːn̪ə | joːgə | jəkʂə
+      Example_Meanings: Vehicle | Yoga/Practice | Yaksha (Spirit)
+      Audio_Character: '[sound:Devanagari_Char_ya.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-6e1a4dd62df7c90566851de052d17e8de439e084667f852535973021.mp3]
+  - id: 1769080979745
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: र
+      Name: ra
+      IPA: ɾə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: रूप | राग | रत्न
+      Example_Audio_Source: रूप, राग, रत्न
+      Image_Stroke_1: |-
+        <img src="Deva-र-order.gif">
+      Image_Stroke_2: |-
+        <img src="Devanagari r र.gif">
+      Example_IPAs: ɾuːpə | ɾɑːgə | ɾət̪n̪ə
+      Example_Meanings: Form (Rupa) | Greed/Lust | Jewel
+      Audio_Character: '[sound:Devanagari_Char_ra.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-de498809edd66cfcef10ff6fe73f6d16d46e2ab6f1eb0b1e0119b05b.mp3]
+  - id: 1769080979746
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ल
+      Name: la
+      IPA: lə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: लोभ | लोक
+      Example_Audio_Source: लोभ, लोक
+      Image_Stroke_1: |-
+        <img src="Deva-ल-order.gif">
+      Image_Stroke_2: |-
+        <img src="Devanagari l ल.gif">
+      Example_IPAs: loːbʰə | loːkə
+      Example_Meanings: Greed | World
+      Audio_Character: '[sound:Devanagari_Char_la.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-6fa461c793188a5ac70fcff5a5f594d9986d7136a264a9021731ccbc.mp3]
+  - id: 1769080979747
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: व
+      Name: va
+      IPA: ʋə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: वज्र | विज्ञान | वीर्य
+      Example_Audio_Source: वज्र, विज्ञान, वीर्य
+      Image_Stroke_1: ''
+      Image_Stroke_2: |-
+        <img src="Devanagari v व.gif">
+      Example_IPAs: ʋəd͡ʒɾə | ʋɪd͡ʒɲɑːn̪ə | ʋiːɾjə
+      Example_Meanings: Diamond/Thunderbolt | Consciousness | Energy/Effort
+      Audio_Character: '[sound:Devanagari_Char_va.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-f8be487b550c3b19448b8f18e3728378936b867fb92d6d02473acfb0.mp3]
+  - id: 1769080979748
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: श
+      Name: śa
+      IPA: ʃə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: शून्य | शून्यता | शील
+      Example_Audio_Source: शून्य, शून्यता, शील
+      Image_Stroke_1: |-
+        <img src="Deva-श-order.gif">
+      Image_Stroke_2: |-
+        <img src="Devanagari ç श.gif">
+      Example_IPAs: ʃuːn̪jə | ʃuːn̪jət̪ɑː | ʃiːlə
+      Example_Meanings: Empty | Emptiness | Morality
+      Audio_Character: '[sound:Devanagari_Char_śa.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-bec39915fc6382c3d51a501cdd438e59d28125a3f54933559e9f1110.mp3]
+  - id: 1769080979749
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ष
+      Name: ṣa
+      IPA: ʂə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: षडायतन
+      Example_Audio_Source: षडायतन
+      Image_Stroke_1: |-
+        <img src="Deva-ष-order.gif">
+      Image_Stroke_2: |-
+        <img src="Devanagari ʂ ष.gif">
+      Example_IPAs: ʂəɖɑːjət̪ən̪ə
+      Example_Meanings: Six Sense Bases
+      Audio_Character: '[sound:Devanagari_Char_ṣa.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-de330b25e91fdd072b39d22700ae3dc73a8fe43872a0cc609e102b30.mp3]
+  - id: 1769080979750
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: स
+      Name: sa
+      IPA: s̪ə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: संसार | समाधि | सुख | संघ
+      Example_Audio_Source: संसार, समाधि, सुख, संघ
+      Image_Stroke_1: ''
+      Image_Stroke_2: |-
+        <img src="Devanagari s स.gif">
+      Example_IPAs: s̪ə̃s̪ɑːɾə | s̪əmɑːd̪ʰɪ | s̪ukʰə | s̪ə̃gʰə
+      Example_Meanings: Samsara | Concentration | Happiness | Sangha
+      Audio_Character: '[sound:Devanagari_Char_sa.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-15be2c63c6449c555329c114b54bf17524947e6a2a4d206e5c3fbb6e.mp3]
+  - id: 1769080979751
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ह
+      Name: ha
+      IPA: ɦə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: हीनयान | हेतु
+      Example_Audio_Source: हीनयान, हेतु
+      Image_Stroke_1: |-
+        <img src="Deva-ह-order.gif">
+      Image_Stroke_2: |-
+        <img src="Devanagari 42 h, ɦ ह.gif">
+      Example_IPAs: ɦiːn̪əjɑːn̪ə | ɦeːt̪u
+      Example_Meanings: Lesser Vehicle | Cause
+      Audio_Character: '[sound:Devanagari_Char_ha.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-f43087882a4d03522cda6df25e2e041492a50d4c250c73393ff0e1d5.mp3]
+  - id: 1769080979752
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ळ
+      Name: ḷa
+      IPA: ɭə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+      Image_Stroke_1: ''
+      Image_Stroke_2: ''
+      Example_IPAs: ''
+      Example_Meanings: ''
+      Audio_Character: '[sound:Devanagari_Char_ḷa.mp3]'
+      Audio_Examples: ''
+  - id: 1769080979753
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: क्ष
+      Name: kṣa
+      IPA: kʂə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: क्षान्ति | क्षण
+      Example_Audio_Source: क्षान्ति, क्षण
+      Image_Stroke_1: ''
+      Image_Stroke_2: ''
+      Example_IPAs: kʂɑːn̪t̪ɪ | kʂəɳə
+      Example_Meanings: Patience (Kshanti) | Moment
+      Audio_Character: '[sound:Devanagari_Char_kṣa.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-35e329a1ba596da7ccaa762ed6ed2cb0b15ba0fdfaa990b512732aa4.mp3]
+  - id: 1769080979754
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ज्ञ
+      Name: jña
+      IPA: d͡ʒɲə
+      Category: Consonant
+      Description: ''
+      Image_Stroke: ''
+      Image_Static: ''
+      Examples: ज्ञान
+      Example_Audio_Source: ज्ञान
+      Image_Stroke_1: ''
+      Image_Stroke_2: ''
+      Example_IPAs: d͡ʒɲɑːn̪ə
+      Example_Meanings: Knowledge
+      Audio_Character: '[sound:Devanagari_Char_jña.mp3]'
+      Audio_Examples: |-
+        [sound:hypertts-214533c09c8b8d14ad8227c833794a837e538748108020120fb151ce.mp3]

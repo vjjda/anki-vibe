@@ -10,7 +10,7 @@ from rich.progress import Progress
 sys.path.append(str(Path(__file__).parent.parent))
 from src.utils.tts_google import GoogleTTS
 
-API_KEY = "YOUR_API_KEY
+API_KEY = "YOUR_API_KEY"
 console = Console()
 
 def get_anki_media_path(profile: str) -> Path:
