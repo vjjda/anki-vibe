@@ -1,0 +1,11 @@
+# Anki Vibe Project Configuration
+[project]
+name = "Devanagari Alphabet"
+anki_profile = "Vijjo"
+
+[[targets]]
+name = "Alphabet"
+model = "Devanagari_Master"
+deck = "Devanagari Alphabet"
+query = 'deck:"Devanagari Alphabet"'
+folder = "data"

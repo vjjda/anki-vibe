@@ -1,0 +1,735 @@
+  - id: 1769080979706
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: अ
+      Name: a
+      IPA: ə
+      Category: Vowel
+      Description: ''
+      Image_Stroke_1: ''
+      Image_Stroke_2: <img src="Devanagari a अ.gif">
+      Image_Static: <img src="Devanagari अ stroke order.svg">
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979707
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: आ
+      Name: ā
+      IPA: ɑː
+      Category: Vowel
+      Description: ''
+      Image_Stroke_1: ''
+      Image_Stroke_2: <img src="Devanagari aa आ.gif">
+      Image_Static: <img src="Devanagari आ stroke order.svg">
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979708
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: इ
+      Name: i
+      IPA: ɪ
+      Category: Vowel
+      Description: ''
+      Image_Stroke_1: ''
+      Image_Stroke_2: <img src="Devanagari i इ.gif">
+      Image_Static: <img src="Devanagari इ stroke order.svg">
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979709
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ई
+      Name: ī
+      IPA: iː
+      Category: Vowel
+      Description: ''
+      Image_Stroke_1: ''
+      Image_Stroke_2: <img src="Devanagari ii ई.gif">
+      Image_Static: <img src="Devanagari ई stroke order.svg">
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979710
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: उ
+      Name: u
+      IPA: u
+      Category: Vowel
+      Description: ''
+      Image_Stroke_1: ''
+      Image_Stroke_2: <img src="Devanagari u उ.gif">
+      Image_Static: <img src="Devanagari उ stroke order.svg">
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979711
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ऊ
+      Name: ū
+      IPA: uː
+      Category: Vowel
+      Description: ''
+      Image_Stroke_1: ''
+      Image_Stroke_2: <img src="Devanagari uu ऊ.gif">
+      Image_Static: <img src="Devanagari ऊ stroke order.svg">
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979712
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ऋ
+      Name: r̥
+      IPA: ɾɨ
+      Category: Vowel
+      Description: ''
+      Image_Stroke_1: ''
+      Image_Stroke_2: <img src="Devanagari r ऋ.gif">
+      Image_Static: <img src="Devanagari ऋ stroke order.svg">
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979713
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ए
+      Name: ē
+      IPA: eː
+      Category: Vowel
+      Description: ''
+      Image_Stroke_1: ''
+      Image_Stroke_2: <img src="Devanagari e ए.gif">
+      Image_Static: <img src="Devanagari ए stroke order.svg">
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979714
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ऐ
+      Name: ai
+      IPA: əɪ
+      Category: Vowel
+      Description: ''
+      Image_Stroke_1: ''
+      Image_Stroke_2: <img src="Devanagari ɛ ऐ.gif">
+      Image_Static: <img src="Devanagari ऐ stroke order.svg">
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979715
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ओ
+      Name: ō
+      IPA: oː
+      Category: Vowel
+      Description: ''
+      Image_Stroke_1: ''
+      Image_Stroke_2: <img src="Devanagari o ओ.gif">
+      Image_Static: <img src="Devanagari ओ stroke order.svg">
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979716
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: औ
+      Name: au
+      IPA: əu
+      Category: Vowel
+      Description: ''
+      Image_Stroke_1: ''
+      Image_Stroke_2: <img src="Devanagari au औ.gif">
+      Image_Static: <img src="Devanagari औ stroke order.svg">
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979717
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: अं
+      Name: aṁ
+      IPA: ə̃
+      Category: Vowel
+      Description: ''
+      Image_Stroke_1: ''
+      Image_Stroke_2: ''
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979718
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: अः
+      Name: aḥ
+      IPA: əhə̆
+      Category: Vowel
+      Description: ''
+      Image_Stroke_1: ''
+      Image_Stroke_2: ''
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979719
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: क
+      Name: ka
+      IPA: kə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: <img src="Deva-क-order.gif">
+      Image_Stroke_2: <img src="Devanagari k क.gif">
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979720
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ख
+      Name: kha
+      IPA: kʰə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: <img src="Deva-ख-order.gif">
+      Image_Stroke_2: <img src="Devanagari kh ख.gif">
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979721
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ग
+      Name: ga
+      IPA: gə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: <img src="Deva-ग-order.gif">
+      Image_Stroke_2: <img src="Devanagari g ग.gif">
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979722
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: घ
+      Name: gha
+      IPA: gʰə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: <img src="Deva-घ-order.gif">
+      Image_Stroke_2: <img src="Devanagari gh घ.gif">
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979723
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ङ
+      Name: ṅa
+      IPA: ŋə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: <img src="Deva-ङ-order.gif">
+      Image_Stroke_2: ''
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979724
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: च
+      Name: ca
+      IPA: t͡ʃə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: <img src="Deva-च-order.gif">
+      Image_Stroke_2: <img src="Devanagari tch च.gif">
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979725
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: छ
+      Name: cha
+      IPA: t͡ʃʰə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: <img src="Deva-छ-order.gif">
+      Image_Stroke_2: <img src="Devanagari tchh छ.gif">
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979726
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ज
+      Name: ja
+      IPA: d͡ʒə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: <img src="Deva-ज-order.gif">
+      Image_Stroke_2: <img src="Devanagari dʒ ज.gif">
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979727
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: झ
+      Name: jha
+      IPA: d͡ʒʰə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: <img src="Deva-झ-order.gif">
+      Image_Stroke_2: <img src="Devanagari dʒʰ झ.gif">
+      Image_Static: <img src="Devanagari झ stroke order.svg">
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979728
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ञ
+      Name: ña
+      IPA: ɲə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: <img src="Deva-ञ-order.gif">
+      Image_Stroke_2: <img src="Devanagari ɲ ञ.gif">
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979729
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ट
+      Name: ṭa
+      IPA: ʈə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: <img src="Deva-ट-order.gif">
+      Image_Stroke_2: <img src="Devanagari t̥ ट.gif">
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979730
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ठ
+      Name: ṭha
+      IPA: ʈʰə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: <img src="Deva-ठ-order.gif">
+      Image_Stroke_2: <img src="Devanagari ʈʰ ठ.gif">
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979731
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ड
+      Name: ḍa
+      IPA: ɖə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: <img src="Deva-ड-order.gif">
+      Image_Stroke_2: <img src="Devanagari ɖ ड.gif">
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979732
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ढ
+      Name: ḍha
+      IPA: ɖʰə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: <img src="Deva-ढ-order.gif">
+      Image_Stroke_2: <img src="Devanagari ɖʱ ढ.gif">
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979733
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ण
+      Name: ṇa
+      IPA: ɳə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: <img src="Deva-ण-order.gif">
+      Image_Stroke_2: <img src="Devanagari ɳ ण.gif">
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979734
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: त
+      Name: ta
+      IPA: t̪ə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: <img src="Deva-त-order.gif">
+      Image_Stroke_2: <img src="Devanagari t त.gif">
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979735
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: थ
+      Name: tha
+      IPA: t̪ʰə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: <img src="Deva-थ-order.gif">
+      Image_Stroke_2: <img src="Devanagari tʰ थ.gif">
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979736
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: द
+      Name: da
+      IPA: d̪ə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: <img src="Deva-द्म-order.gif">
+      Image_Stroke_2: <img src="Devanagari d द.gif">
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979737
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ध
+      Name: dha
+      IPA: d̪ʰə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: <img src="Deva-ध-order.gif">
+      Image_Stroke_2: <img src="ध-order-example.gif">
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979738
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: न
+      Name: na
+      IPA: n̪ə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: <img src="Deva-न-order.gif">
+      Image_Stroke_2: <img src="Devanagari n न.gif">
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979739
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: प
+      Name: pa
+      IPA: pə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: <img src="Deva-प-order.gif">
+      Image_Stroke_2: <img src="Devanagari p प.gif">
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979740
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: फ
+      Name: pha
+      IPA: pʰə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: ''
+      Image_Stroke_2: <img src="Devanagari pʰ फ.gif">
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979741
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ब
+      Name: ba
+      IPA: bə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: ''
+      Image_Stroke_2: <img src="Devanagari b ब.gif">
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979742
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: भ
+      Name: bha
+      IPA: bʰə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: ''
+      Image_Stroke_2: <img src="Devanagari bʰ भ.gif">
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979743
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: म
+      Name: ma
+      IPA: mə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: <img src="Deva-द्म-order.gif">
+      Image_Stroke_2: <img src="Devanagari m म.gif">
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979744
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: य
+      Name: ya
+      IPA: jə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: <img src="Deva-य-order.gif">
+      Image_Stroke_2: <img src="Devanagari j य.gif">
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979745
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: र
+      Name: ra
+      IPA: ɾə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: <img src="Deva-र-order.gif">
+      Image_Stroke_2: <img src="Devanagari r र.gif">
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979746
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ल
+      Name: la
+      IPA: lə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: <img src="Deva-ल-order.gif">
+      Image_Stroke_2: <img src="Devanagari l ल.gif">
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979747
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: व
+      Name: va
+      IPA: ʋə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: ''
+      Image_Stroke_2: <img src="Devanagari v व.gif">
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979748
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: श
+      Name: śa
+      IPA: ʃə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: <img src="Deva-श-order.gif">
+      Image_Stroke_2: <img src="Devanagari ç श.gif">
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979749
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ष
+      Name: ṣa
+      IPA: ʂə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: <img src="Deva-ष-order.gif">
+      Image_Stroke_2: <img src="Devanagari ʂ ष.gif">
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979750
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: स
+      Name: sa
+      IPA: s̪ə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: ''
+      Image_Stroke_2: <img src="Devanagari s स.gif">
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979751
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ह
+      Name: ha
+      IPA: ɦə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: <img src="Deva-ह-order.gif">
+      Image_Stroke_2: <img src="Devanagari 42 h, ɦ ह.gif">
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979752
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ळ
+      Name: ḷa
+      IPA: ɭə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: ''
+      Image_Stroke_2: ''
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979753
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: क्ष
+      Name: kṣa
+      IPA: kʂə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: ''
+      Image_Stroke_2: ''
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
+  - id: 1769080979754
+    deck: Devanagari Alphabet
+    tags:
+      - devanagari_alphabet
+    fields:
+      Character: ज्ञ
+      Name: jña
+      IPA: d͡ʒɲə
+      Category: Consonant
+      Description: ''
+      Image_Stroke_1: ''
+      Image_Stroke_2: ''
+      Image_Static: ''
+      Examples: ''
+      Example_Audio_Source: ''
