@@ -137,6 +137,53 @@ class AnkiConnectAdapter:
         self._invoke("deleteDecks", decks=deck_names, cardsToo=True)
 
     # =========================================================================
+    # MODEL OPERATIONS
+    # =========================================================================
+
+    def create_model(self, model_name: str, in_order_fields: List[str], css: str = "", is_cloze: bool = False) -> Dict[str, Any]:
+        """
+        Tạo Note Type (Model) mới.
+        """
+        params = {
+            "modelName": model_name,
+            "inOrderFields": in_order_fields,
+            "css": css,
+            "isCloze": is_cloze,
+            "cardTemplates": [
+                {
+                    "Name": "Card 1",
+                    "Front": "{{"+in_order_fields[0]+"}}",
+                    "Back": "{{FrontSide}}\n\n<hr id=answer>\n\n" + "\n\n".join(["{{"+f+"}}" for f in in_order_fields[1:]])
+                }
+            ]
+        }
+        return self._invoke("createModel", **params)
+
+    # =========================================================================
+    # MEDIA OPERATIONS
+    # =========================================================================
+
+    def store_media_file(self, filename: str, data_base64: str = None, path: str = None, url: str = None) -> str:
+        """
+        Lưu file media vào Anki collection.media folder.
+        Có thể cung cấp:
+        - data_base64: Nội dung file đã mã hóa base64.
+        - path: Đường dẫn file local tuyệt đối.
+        - url: Đường dẫn tải về từ internet.
+        """
+        params = {"filename": filename}
+        if data_base64:
+            params["data"] = data_base64
+        elif path:
+            params["path"] = path
+        elif url:
+            params["url"] = url
+        else:
+            raise ValueError("Must provide either data_base64, path, or url")
+            
+        return self._invoke("storeMediaFile", **params)
+
+    # =========================================================================
     # DATA RETRIEVAL (Notes)
     # =========================================================================
 
@@ -220,6 +267,23 @@ class AnkiConnectAdapter:
         """Cập nhật nội dung fields."""
         note = {"id": note_id, "fields": fields}
         self._invoke("updateNoteFields", note=note)
+
+    def change_note_model(self, note_id: int, new_model_name: str, fields: Dict[str, str], tags: List[str] = None) -> None:
+        """
+        Chuyển đổi Note sang Model khác.
+        Args:
+            note_id: ID của note cần chuyển.
+            new_model_name: Tên model đích.
+            fields: Dictionary map tên field mới -> giá trị mới.
+            tags: (Optional) Danh sách tags mới.
+        """
+        params = {
+            "note": {"id": note_id, "modelName": new_model_name, "fields": fields}
+        }
+        if tags is not None:
+            params["note"]["tags"] = tags
+        
+        self._invoke("updateNoteModel", **params)
 
     # Helper function to construct an action for 'multi' batch
     @staticmethod
