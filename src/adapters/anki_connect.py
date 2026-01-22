@@ -159,6 +159,15 @@ class AnkiConnectAdapter:
         }
         return self._invoke("createModel", **params)
 
+    def add_model_field(self, model_name: str, field_name: str, index: int = None) -> Dict[str, Any]:
+        """
+        Thêm field mới vào Model.
+        """
+        params = {"modelName": model_name, "fieldName": field_name}
+        if index is not None:
+            params["index"] = index
+        return self._invoke("modelFieldAdd", **params)
+
     # =========================================================================
     # MEDIA OPERATIONS
     # =========================================================================
