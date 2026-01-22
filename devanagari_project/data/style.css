@@ -58,3 +58,22 @@
     text-transform: uppercase;
     font-size: 0.8em;
 }
+
+/* Example Table */
+.ex-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.ex-table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+.ex-word { font-size: 1.2em; color: #268bd2; font-weight: bold; }
+.ex-ipa { color: #93a1a1; font-family: "Charis SIL", serif; font-size: 0.9em; }
+.ex-mean { color: #586e75; font-style: italic; }

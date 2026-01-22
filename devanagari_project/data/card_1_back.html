@@ -12,5 +12,44 @@
         <div class="stroke-box">{{Image_Stroke_2}}</div>
     </div>
     
-    <div class="examples">{{Examples}}</div>
+    <!-- Example Table -->
+    <div class="example-container" id="ex-container"></div>
+
+    <!-- Hidden Data -->
+    <div id="raw-ex" style="display:none">{{Examples}}</div>
+    <div id="raw-ex-ipa" style="display:none">{{Example_IPAs}}</div>
+    <div id="raw-ex-mean" style="display:none">{{Example_Meanings}}</div>
+
+    <script>
+    (function() {
+        var exEl = document.getElementById("raw-ex");
+        var ipaEl = document.getElementById("raw-ex-ipa");
+        var meanEl = document.getElementById("raw-ex-mean");
+        var container = document.getElementById("ex-container");
+        
+        if (!exEl || !container) return;
+        
+        var words = exEl.innerText.split(" | ");
+        var ipas = ipaEl ? ipaEl.innerText.split(" | ") : [];
+        var means = meanEl ? meanEl.innerText.split(" | ") : [];
+        
+        if (words.length === 0 || (words.length === 1 && !words[0])) return;
+
+        var html = '<table class="ex-table">';
+        for (var i = 0; i < words.length; i++) {
+            var w = words[i].trim();
+            if (!w) continue;
+            var p = ipas[i] ? ipas[i].trim() : "";
+            var m = means[i] ? means[i].trim() : "";
+            
+            html += '<tr>' +
+                    '<td class="ex-word">' + w + '</td>' +
+                    '<td class="ex-ipa">/' + p + '/</td>' +
+                    '<td class="ex-mean">' + m + '</td>' +
+                    '</tr>';
+        }
+        html += '</table>';
+        container.innerHTML = html;
+    })();
+    </script>
 </div>
