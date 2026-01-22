@@ -27705,3 +27705,1316 @@
       A_English: '[sound:hypertts_a9c6df3e711751080b0a5_6f258b42.mp3]'
       IPA: oɦət̪ | ekkə | kʌt̪ɑː | kɪɾiːməʈə | læbiːmə | s̪ʌt̪uʈək
       Sinhala_Segmented: ඔහත් | එක්ක | කතා | කිරීමට | ලැබීම | සතුටක්
+  - id: 1769043273656
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Hello
+      Sinhala: හලෝ
+      A_Sinhala_Male: '[sound:SINFND1_0001.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Halō
+      Sinhala_Segmented: ''
+  - id: 1769043273658
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Thank you
+      Sinhala: ස්තූතියි
+      A_Sinhala_Male: '[sound:SINFND1_1058.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Stūtiyi
+      Sinhala_Segmented: ''
+  - id: 1769043273659
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Excuse me
+      Sinhala: සමාවෙන්න
+      A_Sinhala_Male: '[sound:SINFND1_1100.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Samāvenna
+      Sinhala_Segmented: ''
+  - id: 1769043273660
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Please
+      Sinhala: කරුණාකරලා
+      A_Sinhala_Male: '[sound:SINFND1_1048.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Karunākaralā
+      Sinhala_Segmented: ''
+  - id: 1769043273661
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Very good
+      Sinhala: ඉතා හොඳ
+      A_Sinhala_Male: '[sound:SINFND1_0474.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Itā honda
+      Sinhala_Segmented: ''
+  - id: 1769043273662
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Cheers!
+      Sinhala: චියර්ස්!
+      A_Sinhala_Male: '[sound:SINFND1_0947.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Chiyars!
+      Sinhala_Segmented: ''
+  - id: 1769043273663
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Goodbye
+      Sinhala: ආයුබෝවන්
+      A_Sinhala_Male: '[sound:SINFND1_0964.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Āyubōvan
+      Sinhala_Segmented: ''
+  - id: 1769043273664
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: How much is it?
+      Sinhala: එය කීයද?
+      A_Sinhala_Male: '[sound:SINFND1_0974.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Eya kīyada?
+      Sinhala_Segmented: ''
+  - id: 1769043273665
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: The check, please
+      Sinhala: කරුණාකර බිල ගේන්න
+      A_Sinhala_Male: '[sound:SINFND1_1063.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Karunākara bila gēnna
+      Sinhala_Segmented: ''
+  - id: 1769043273666
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Where is the bathroom?
+      Sinhala: නාන කාමරය කොහේද?
+      A_Sinhala_Male: '[sound:SINFND1_1094.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Nāna kāmaraya kohēda?
+      Sinhala_Segmented: ''
+  - id: 1769043273667
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Sinhala (language)
+      Sinhala: සිංහල
+      A_Sinhala_Male: '[sound:SINFND1_0858.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Sinhala
+      Sinhala_Segmented: ''
+  - id: 1769043273668
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Colombo
+      Sinhala: කොළඹ
+      A_Sinhala_Male: '[sound:SINFND1_0849.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Kolamba
+      Sinhala_Segmented: ''
+  - id: 1769043273669
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Sri Lanka
+      Sinhala: ශ්රී ලංකාව
+      A_Sinhala_Male: '[sound:SINFND1_0851.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Shrī lankāva
+      Sinhala_Segmented: ''
+  - id: 1769043273670
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Yes
+      Sinhala: ඔව්
+      A_Sinhala_Male: '[sound:SINFND1_0485.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Ov
+      Sinhala_Segmented: ''
+  - id: 1769043273671
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: No
+      Sinhala: නැත
+      A_Sinhala_Male: '[sound:SINFND1_0486.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Naeta
+      Sinhala_Segmented: ''
+  - id: 1769043273672
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: One (1)
+      Sinhala: එක
+      A_Sinhala_Male: '[sound:SINFND1_0873.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Eka
+      Sinhala_Segmented: ''
+  - id: 1769043273675
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Two (2)
+      Sinhala: දෙක
+      A_Sinhala_Male: '[sound:SINFND1_0874.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Deka
+      Sinhala_Segmented: ''
+  - id: 1769043273676
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Three (3)
+      Sinhala: තුන
+      A_Sinhala_Male: '[sound:SINFND1_0875.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Tuna
+      Sinhala_Segmented: ''
+  - id: 1769043273677
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: This
+      Sinhala: මෙය
+      A_Sinhala_Male: '[sound:SINFND1_1112.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Meya
+      Sinhala_Segmented: ''
+  - id: 1769043273678
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: That
+      Sinhala: එය
+      A_Sinhala_Male: '[sound:SINFND1_1115.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Eya
+      Sinhala_Segmented: ''
+  - id: 1769043273679
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Beautiful
+      Sinhala: සුන්දර
+      A_Sinhala_Male: '[sound:SINFND1_0399.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Sundara
+      Sinhala_Segmented: ''
+  - id: 1769043273680
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Delicious
+      Sinhala: රසවත්
+      A_Sinhala_Male: '[sound:SINFND1_0415.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Rasavat
+      Sinhala_Segmented: ''
+  - id: 1769043273681
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: I like it
+      Sinhala: මා ඊට කැමතිය
+      A_Sinhala_Male: '[sound:SINFND1_0990.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Mā īta kaematiya
+      Sinhala_Segmented: ''
+  - id: 1769043273682
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Is it OK?
+      Sinhala: ඒකට කමක් නැද්ද?
+      A_Sinhala_Male: '[sound:SINFND1_1023.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Ēkata kamak naedda?
+      Sinhala_Segmented: ''
+  - id: 1769043273683
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: That's good
+      Sinhala: ඒක හොඳයි
+      A_Sinhala_Male: '[sound:SINFND1_1061.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Ēka hondayi
+      Sinhala_Segmented: ''
+  - id: 1769043273684
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Where is …?
+      Sinhala: … කොහේද?
+      A_Sinhala_Male: '[sound:SINFND1_0918.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: … kohēda?
+      Sinhala_Segmented: ''
+  - id: 1769043273685
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: What?
+      Sinhala: කුමක්ද?
+      A_Sinhala_Male: '[sound:SINFND1_0916.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Kumakda?
+      Sinhala_Segmented: ''
+  - id: 1769043273686
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: When?
+      Sinhala: කවදාද?
+      A_Sinhala_Male: '[sound:SINFND1_0917.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Kavadāda?
+      Sinhala_Segmented: ''
+  - id: 1769043273687
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: A little, few
+      Sinhala: ටිකක්
+      A_Sinhala_Male: '[sound:SINFND1_0926.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Tikak
+      Sinhala_Segmented: ''
+  - id: 1769043273688
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Welcome!
+      Sinhala: ආයුබෝවන්!
+      A_Sinhala_Male: '[sound:SINFND1_1068.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Āyubōvan!
+      Sinhala_Segmented: ''
+  - id: 1769043273689
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Good morning
+      Sinhala: සුභ උදෑසනක්
+      A_Sinhala_Male: '[sound:SINFND1_0962.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Subha udaēsanak
+      Sinhala_Segmented: ''
+  - id: 1769043273690
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Good night
+      Sinhala: සුභ රාත්රියක්
+      A_Sinhala_Male: '[sound:SINFND1_0963.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Subha rātriyak
+      Sinhala_Segmented: ''
+  - id: 1769043273691
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: See you later
+      Sinhala: පස්සෙ හම්බ වෙමු
+      A_Sinhala_Male: '[sound:SINFND1_1055.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Passe hamba vemu
+      Sinhala_Segmented: ''
+  - id: 1769043273692
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Thank you very much
+      Sinhala: බොහොම ස්තූතියි
+      A_Sinhala_Male: '[sound:SINFND1_1059.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Bohoma stūtiyi
+      Sinhala_Segmented: ''
+  - id: 1769043273693
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: You're welcome
+      Sinhala: සතුටින් භාර ගනිමි
+      A_Sinhala_Male: '[sound:SINFND1_1099.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Satutin bhāra ganimi
+      Sinhala_Segmented: ''
+  - id: 1769043273694
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: No problem
+      Sinhala: ප්රශ්නයක් නෑ
+      A_Sinhala_Male: '[sound:SINFND1_1044.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Prashnayak naē
+      Sinhala_Segmented: ''
+  - id: 1769043273695
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: I love you
+      Sinhala: මම ඔබට ආදරෙයි
+      A_Sinhala_Male: '[sound:SINFND1_0991.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Mama obata ādareyi
+      Sinhala_Segmented: ''
+  - id: 1769043273696
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Congratulations!
+      Sinhala: සුභපැතුම්!
+      A_Sinhala_Male: '[sound:SINFND1_0949.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Subhapaetum!
+      Sinhala_Segmented: ''
+  - id: 1769043273697
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: I'm sorry
+      Sinhala: මට කණගාටුයි
+      A_Sinhala_Male: '[sound:SINFND1_1018.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Mata kanagātuyi
+      Sinhala_Segmented: ''
+  - id: 1769043273698
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: What do you recommend?
+      Sinhala: ඔබ නිර්දේශ කරන්නේ කුමක්ද?
+      A_Sinhala_Male: '[sound:SINFND1_1073.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Oba nirdēsha karannē kumakda?
+      Sinhala_Segmented: ''
+  - id: 1769043273699
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Can I take a photo?
+      Sinhala: මම ඡායාරූපයක් ගන්නද?
+      A_Sinhala_Male: '[sound:SINFND1_0939.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Mama chhāyārūpayak gannada?
+      Sinhala_Segmented: ''
+  - id: 1769043273700
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: What is that?
+      Sinhala: ඒ මොකක්ද?
+      A_Sinhala_Male: '[sound:SINFND1_1078.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Ē mokakda?
+      Sinhala_Segmented: ''
+  - id: 1769043273701
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Where are you from?
+      Sinhala: ඔබ පැමිණියේ කොහේ සිටද?
+      A_Sinhala_Male: '[sound:SINFND1_1089.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Oba paeminiyē kohē sitada?
+      Sinhala_Segmented: ''
+  - id: 1769043273702
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: I am from …
+      Sinhala: මා පැමිණියේ …
+      A_Sinhala_Male: '[sound:SINFND1_0980.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Mā paeminiyē …
+      Sinhala_Segmented: ''
+  - id: 1769043273703
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: How are you doing?
+      Sinhala: ඉතින් කොහොමද?
+      A_Sinhala_Male: '[sound:SINFND1_1101.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Itin kohomada?
+      Sinhala_Segmented: ''
+  - id: 1769043273704
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: I'm fine
+      Sinhala: මම හොඳින්
+      A_Sinhala_Male: '[sound:SINFND1_1004.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Mama hondin
+      Sinhala_Segmented: ''
+  - id: 1769043273705
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: What is your name? (formal)
+      Sinhala: ඔබේ නම කුමක්ද?
+      A_Sinhala_Male: '[sound:SINFND1_1081.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Obē nama kumakda?
+      Sinhala_Segmented: ''
+  - id: 1769043273706
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: My name is …
+      Sinhala: මගේ නම …
+      A_Sinhala_Male: '[sound:SINFND1_1042.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Magē nama …
+      Sinhala_Segmented: ''
+  - id: 1769043273707
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Nice to meet you
+      Sinhala: ඔබ හමුවීම සතුටක්
+      A_Sinhala_Male: '[sound:SINFND1_1103.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Oba hamuvīma satutak
+      Sinhala_Segmented: ''
+  - id: 1769043273708
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Reply to Nice to meet you
+      Sinhala: හමුවීම මටත් සතුටක්
+      A_Sinhala_Male: '[sound:SINFND1_1104.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Hamuvīma matat satutak
+      Sinhala_Segmented: ''
+  - id: 1769043273709
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Here
+      Sinhala: මෙතැන
+      A_Sinhala_Male: '[sound:SINFND1_1118.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Metaena
+      Sinhala_Segmented: ''
+  - id: 1769043273710
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: There
+      Sinhala: එතැන
+      A_Sinhala_Male: '[sound:SINFND1_1119.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Etaena
+      Sinhala_Segmented: ''
+  - id: 1769043273711
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Interesting
+      Sinhala: සිත්කළු
+      A_Sinhala_Male: '[sound:SINFND1_0438.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Sitkalu
+      Sinhala_Segmented: ''
+  - id: 1769043273712
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Possible
+      Sinhala: හැකි
+      A_Sinhala_Male: '[sound:SINFND1_0452.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Haeki
+      Sinhala_Segmented: ''
+  - id: 1769043273713
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Correct, right
+      Sinhala: නිවැරදි
+      A_Sinhala_Male: '[sound:SINFND1_0483.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Nivaeradi
+      Sinhala_Segmented: ''
+  - id: 1769043273714
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Wonderful
+      Sinhala: පුදුම සහගත
+      A_Sinhala_Male: '[sound:SINFND1_0475.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Puduma sahagata
+      Sinhala_Segmented: ''
+  - id: 1769043273715
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Favorite
+      Sinhala: ප්රියතම
+      A_Sinhala_Male: '[sound:SINFND1_0423.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Priyatama
+      Sinhala_Segmented: ''
+  - id: 1769043273716
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Famous
+      Sinhala: ප්රසිද්ධ
+      A_Sinhala_Male: '[sound:SINFND1_0422.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Prasiddha
+      Sinhala_Segmented: ''
+  - id: 1769043273717
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Awesome!
+      Sinhala: මාරයි!
+      A_Sinhala_Male: '[sound:SINFND1_0932.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Mārayi!
+      Sinhala_Segmented: ''
+  - id: 1769043273718
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Excellent, outstanding
+      Sinhala: විශිෂ්ට
+      A_Sinhala_Male: '[sound:SINFND1_0418.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Vishishta
+      Sinhala_Segmented: ''
+  - id: 1769043273719
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Busy
+      Sinhala: කාර්ය බහුල
+      A_Sinhala_Male: '[sound:SINFND1_0403.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Kārya bahula
+      Sinhala_Segmented: ''
+  - id: 1769043273720
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Ready
+      Sinhala: සුදානම්
+      A_Sinhala_Male: '[sound:SINFND1_0455.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Sudānam
+      Sinhala_Segmented: ''
+  - id: 1769043273721
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Later
+      Sinhala: පසුව
+      A_Sinhala_Male: '[sound:SINFND1_1158.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Pasuva
+      Sinhala_Segmented: ''
+  - id: 1769043273722
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Now
+      Sinhala: දැන්
+      A_Sinhala_Male: '[sound:SINFND1_1165.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Daen
+      Sinhala_Segmented: ''
+  - id: 1769043273723
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: I
+      Sinhala: මම
+      A_Sinhala_Male: '[sound:SINFND1_1121.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Mama
+      Sinhala_Segmented: ''
+  - id: 1769043273724
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: You (formal or plural)
+      Sinhala: ඔබ
+      A_Sinhala_Male: '[sound:SINFND1_1122.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Oba
+      Sinhala_Segmented: ''
+  - id: 1769043273725
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: You (informal)
+      Sinhala: ඔයා
+      A_Sinhala_Male: '[sound:SINFND1_1123.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Oyā
+      Sinhala_Segmented: ''
+  - id: 1769043273726
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Friend
+      Sinhala: මිතුරා
+      A_Sinhala_Male: '[sound:SINFND1_0141.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Miturā
+      Sinhala_Segmented: ''
+  - id: 1769043273727
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Nothing
+      Sinhala: කිසිත් නැත
+      A_Sinhala_Male: '[sound:SINFND1_1164.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Kisit naeta
+      Sinhala_Segmented: ''
+  - id: 1769043273728
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: More
+      Sinhala: වැඩි
+      A_Sinhala_Male: '[sound:SINFND1_0487.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Vaedi
+      Sinhala_Segmented: ''
+  - id: 1769043273729
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Maybe
+      Sinhala: විය හැකියි
+      A_Sinhala_Male: '[sound:SINFND1_1160.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Viya haekiyi
+      Sinhala_Segmented: ''
+  - id: 1769043273730
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Of course
+      Sinhala: ඇත්තෙන්ම
+      A_Sinhala_Male: '[sound:SINFND1_1166.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Aettenma
+      Sinhala_Segmented: ''
+  - id: 1769043273731
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: I agree
+      Sinhala: මම එකඟයි
+      A_Sinhala_Male: '[sound:SINFND1_0978.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Mama ekangayi
+      Sinhala_Segmented: ''
+  - id: 1769043273732
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: I understand
+      Sinhala: මට වැටහේ
+      A_Sinhala_Male: '[sound:SINFND1_0995.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Mata vaetahē
+      Sinhala_Segmented: ''
+  - id: 1769043273733
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: I don't understand
+      Sinhala: මට නොවැටහේ
+      A_Sinhala_Male: '[sound:SINFND1_0985.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Mata novaetahē
+      Sinhala_Segmented: ''
+  - id: 1769043273734
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Repeat it, please
+      Sinhala: කරුණාකර ආයෙත් කියන්න
+      A_Sinhala_Male: '[sound:SINFND1_1054.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Karunākara āyet kiyanna
+      Sinhala_Segmented: ''
+  - id: 1769043273735
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Can you speak English?
+      Sinhala: ඔබට ඉංග්රීසි කථා කළ හැකිද?
+      A_Sinhala_Male: '[sound:SINFND1_0945.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Obata ingrīsi kathā kala haekida?
+      Sinhala_Segmented: ''
+  - id: 1769043273736
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: I can speak a little bit of Sinhala
+      Sinhala: මට සිංහල ටිකක් කථා කළ හැකිය
+      A_Sinhala_Male: '[sound:SINFND1_0869.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Mata sinhala tikak kathā kala haekiya
+      Sinhala_Segmented: ''
+  - id: 1769043273737
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: How do you say … in Sinhala?
+      Sinhala: ඔබ … සිංහලෙන් කියන්නෙ කොහොමද?
+      A_Sinhala_Male: '[sound:SINFND1_0871.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Oba … sinhalen kiyanne kohomada?
+      Sinhala_Segmented: ''
+  - id: 1769043273738
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: What does … mean?
+      Sinhala: … යන්නෙහි අදහස කුමක්ද?
+      A_Sinhala_Male: '[sound:SINFND1_1076.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: … yannehi adahasa kumakda?
+      Sinhala_Segmented: ''
+  - id: 1769043273739
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Can I get Internet access here?
+      Sinhala: මට මෙහිදී අන්තර්ජාලය වෙත පිවිසිය හැකිද?
+      A_Sinhala_Male: '[sound:SINFND1_0938.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Mata mehidī antarjālaya veta pivisiya haekida?
+      Sinhala_Segmented: ''
+  - id: 1769043273740
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Can you recommend a good restaurant nearby?
+      Sinhala: ආසන්න අවන්හලක් නිර්දේශ කිරීමට හැකිද?
+      A_Sinhala_Male: '[sound:SINFND1_0943.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Āsanna avanhalak nirdēsha kirīmata haekida?
+      Sinhala_Segmented: ''
+  - id: 1769043273741
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Help!
+      Sinhala: උදව් කරන්න!
+      A_Sinhala_Male: '[sound:SINFND1_0968.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Udav karanna!
+      Sinhala_Segmented: ''
+  - id: 1769043273742
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Police
+      Sinhala: පොලීසිය
+      A_Sinhala_Male: '[sound:SINFND1_0277.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Polīsiya
+      Sinhala_Segmented: ''
+  - id: 1769043273743
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Doctor
+      Sinhala: වෛද්යවරයා (වෛද්යවරිය)
+      A_Sinhala_Male: '[sound:SINFND1_0102.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Vaidyavarayā (Vaidyavariya)
+      Sinhala_Segmented: ''
+  - id: 1769043273744
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: I'm lost
+      Sinhala: මම අතරමන් වෙළා
+      A_Sinhala_Male: '[sound:SINFND1_1014.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Mama ataraman velā
+      Sinhala_Segmented: ''
+  - id: 1769043273745
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Which way?
+      Sinhala: කුමන පැත්තේද?
+      A_Sinhala_Male: '[sound:SINFND1_0920.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Kumana paettēda?
+      Sinhala_Segmented: ''
+  - id: 1769043273746
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Today
+      Sinhala: අද
+      A_Sinhala_Male: '[sound:SINFND1_1204.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Ada
+      Sinhala_Segmented: ''
+  - id: 1769043273747
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Tonight
+      Sinhala: අද රෑ
+      A_Sinhala_Male: '[sound:SINFND1_1205.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Ada raē
+      Sinhala_Segmented: ''
+  - id: 1769043273748
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Tomorrow
+      Sinhala: හෙට
+      A_Sinhala_Male: '[sound:SINFND1_1206.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Heta
+      Sinhala_Segmented: ''
+  - id: 1769043273749
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Left
+      Sinhala: වම
+      A_Sinhala_Male: '[sound:SINFND1_1340.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Vama
+      Sinhala_Segmented: ''
+  - id: 1769043273750
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Right (not left)
+      Sinhala: දකුණ
+      A_Sinhala_Male: '[sound:SINFND1_1342.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Dakuna
+      Sinhala_Segmented: ''
+  - id: 1769043273751
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Closed (for business)
+      Sinhala: වසා ඇත
+      A_Sinhala_Male: '[sound:SINFND1_1109.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Vasā aeta
+      Sinhala_Segmented: ''
+  - id: 1769043273752
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Water
+      Sinhala: ජලය
+      A_Sinhala_Male: '[sound:SINFND1_0386.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Jalaya
+      Sinhala_Segmented: ''
+  - id: 1769043273753
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Rice
+      Sinhala: බත්
+      A_Sinhala_Male: '[sound:SINFND1_0611.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Bat
+      Sinhala_Segmented: ''
+  - id: 1769043273754
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Coconut
+      Sinhala: පොල්
+      A_Sinhala_Male: '[sound:SINFND1_0574.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Pol
+      Sinhala_Segmented: ''
+  - id: 1769043273755
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Happy
+      Sinhala: සතුට
+      A_Sinhala_Male: '[sound:SINFND1_0497.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Satuta
+      Sinhala_Segmented: ''
+  - id: 1769043273756
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Do you have …?
+      Sinhala: ඔබ ළඟ … තිබෙනවාද?
+      A_Sinhala_Male: '[sound:SINFND1_0952.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Oba langa … tibenavāda?
+      Sinhala_Segmented: ''
+  - id: 1769043273757
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: Can you give me a discount?
+      Sinhala: මට ඩිස්කවුන්ට් එකක් දෙන්න පුළුවන්ද?
+      A_Sinhala_Male: '[sound:SINFND1_0941.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Mata diskawunt ekak denna puluvanda?
+      Sinhala_Segmented: ''
+  - id: 1769043273758
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: I don't want it
+      Sinhala: මට අවශ්ය නැත
+      A_Sinhala_Male: '[sound:SINFND1_0986.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Mata avashya naeta
+      Sinhala_Segmented: ''
+  - id: 1769043273759
+    deck: Nemo Sinhala
+    tags:
+      - direct_import
+      - nemo_sinhala
+    fields:
+      English: 'Tongue Twister: The small torch of little teacher'
+      Sinhala: චූටි ටීචගේ චූටි ටෝට් එක
+      A_Sinhala_Male: '[sound:SINFND1_1383.mp3]'
+      A_Sinhala_Female: ''
+      A_English: ''
+      IPA: Chūti tīchagē chūti tōt eka
+      Sinhala_Segmented: ''
