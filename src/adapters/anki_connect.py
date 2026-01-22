@@ -236,11 +236,14 @@ class AnkiConnectAdapter:
         """
         return self._invoke("multi", actions=actions)
 
-    def add_notes(self, notes: List[Dict[str, Any]]) -> List[Optional[int]]:
+    def add_notes(self, notes: List[Dict[str, Any]], allow_duplicate: bool = False) -> List[Optional[int]]:
         """
         Thêm nhiều ghi chú cùng lúc (Bulk Insert).
         Returns: List các Note ID vừa tạo (theo thứ tự input).
         """
+        if allow_duplicate:
+            for note in notes:
+                note["options"] = {"allowDuplicate": True}
         return self._invoke("addNotes", notes=notes)
 
     # =========================================================================

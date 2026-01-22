@@ -230,7 +230,8 @@ class SyncService:
         if to_create:
             logger.info(f"Creating {len(to_create)} new notes for {model_name}...")
             try:
-                new_ids = self.adapter.add_notes(to_create)
+                # Allow duplicates to ensure YAML source of truth is respected
+                new_ids = self.adapter.add_notes(to_create, allow_duplicate=True)
                 
                 # Gán ID mới ngược lại vào notes_data
                 for i, new_id in enumerate(new_ids):
