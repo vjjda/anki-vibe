@@ -4,8 +4,11 @@
 <!-- Header -->
 <div class="sinhala-word">{{Sinhala}}</div>
 
-<!-- Stacked View Container -->
+<!-- Stacked View Container (Word & IPA) -->
 <div id="render-area" class="transliteration-container"></div>
+
+<!-- Syllable breakdown Container -->
+<div id="syllable-area" class="syllable-container"></div>
 
 <!-- Native Audio -->
 <div class="audio-container">
@@ -15,32 +18,66 @@
 <!-- Hidden Data -->
 <div id="raw-word" style="display:none">{{Sinhala_Segmented}}</div>
 <div id="raw-ipa" style="display:none">{{IPA}}</div>
+<div id="raw-syl" style="display:none">{{Syllable_Segmented}}</div>
+<div id="raw-trans" style="display:none">{{Transliteration}}</div>
 
 <!-- JS Logic -->
 <script>
 (function() {
+    // 1. Render Word & IPA
     var wEl = document.getElementById("raw-word");
     var iEl = document.getElementById("raw-ipa");
     var container = document.getElementById("render-area");
     
-    if (!wEl || !iEl || !container) return;
-    
-    var wArr = wEl.innerText.split(" | ");
-    var iArr = iEl.innerText.split(" | ");
-    
-    var html = "";
-    var len = Math.min(wArr.length, iArr.length);
-    
-    for (var i = 0; i < len; i++) {
-        var w = wArr[i].trim();
-        var p = iArr[i].trim();
-        if (!w) continue;
+    if (wEl && iEl && container) {
+        var wRaw = wEl.innerText;
+        var iRaw = iEl.innerText;
         
-        html += '<div class="word-pair">' + 
-                '<span class="word-top">' + w + '</span>' + 
-                '<span class="word-bottom">' + p + '</span>' + 
-                '</div>';
+        var wArr = wRaw.split(" | ");
+        var iArr = iRaw.split(" | ");
+        
+        var html = "";
+        var len = Math.min(wArr.length, iArr.length);
+        
+        for (var i = 0; i < len; i++) {
+            var w = wArr[i].trim();
+            var p = iArr[i].trim();
+            if (!w) continue;
+            
+            html += '<div class="word-pair">' + 
+                    '<span class="word-top">' + w + '</span>' + 
+                    '<span class="word-bottom">' + p + '</span>' + 
+                    '</div>';
+        }
+        container.innerHTML = html;
     }
-    container.innerHTML = html;
+
+    // 2. Render Syllable & Transliteration
+    var sEl = document.getElementById("raw-syl");
+    var tEl = document.getElementById("raw-trans");
+    var sylContainer = document.getElementById("syllable-area");
+
+    if (sEl && tEl && sylContainer) {
+        var sRaw = sEl.innerText;
+        var tRaw = tEl.innerText;
+        
+        var sArr = sRaw.split(" | ");
+        var tArr = tRaw.split(" | ");
+        
+        var html = "";
+        var len = Math.min(sArr.length, tArr.length);
+        
+        for (var i = 0; i < len; i++) {
+            var s = sArr[i].trim();
+            var t = tArr[i].trim();
+            if (!s) continue;
+            
+            html += '<div class="syllable-pair">' + 
+                    '<span class="syl-top">' + s + '</span>' + 
+                    '<span class="syl-bottom">' + t + '</span>' + 
+                    '</div>';
+        }
+        sylContainer.innerHTML = html;
+    }
 })();
 </script>

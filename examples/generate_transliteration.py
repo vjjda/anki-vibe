@@ -56,9 +56,9 @@ def generate():
                     tr_syllables.append(s)
             
             if syllables:
-                # Format: | s1 | s2 |
-                syl_word = "| " + " | ".join(syllables) + " |"
-                tr_word = "| " + " | ".join(tr_syllables) + " |"
+                # Format: s1 | s2
+                syl_word = " | ".join(syllables)
+                tr_word = " | ".join(tr_syllables)
                 
                 syl_parts.append(syl_word)
                 trans_parts.append(tr_word)
