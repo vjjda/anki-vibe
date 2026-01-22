@@ -163,8 +163,13 @@ class SyncService:
 
         if new_hash != old_hash:
             logger.info(f"Model '{model_name}' changed. Updating Anki...")
+            
             # Update CSS
             self.adapter.update_model_styling(model_name, css)
+            
+            # Update Templates
+            if templates:
+                self.adapter.update_model_templates(model_name, templates)
             
             self.state_manager.update_model_hash(model_name, new_hash)
 
