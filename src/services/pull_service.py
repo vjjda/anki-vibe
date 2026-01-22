@@ -194,8 +194,8 @@ class PullService:
         # Templates Files
         templates_map = {}
         for tpl_name, tpl_content in templates.items():
-            qfmt = tpl_content.get("qfmt", "")
-            afmt = tpl_content.get("afmt", "")
+            qfmt = tpl_content.get("Front", "")
+            afmt = tpl_content.get("Back", "")
             
             # Format map để tính Hash
             templates_map[tpl_name] = {"Front": qfmt, "Back": afmt}

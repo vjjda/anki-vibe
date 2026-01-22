@@ -1,0 +1,55 @@
+
+{{FrontSide}}
+
+<hr id=answer>
+
+
+
+
+
+<!-- Main Header Text -->
+<div class="sinhala-word">{{Sinhala}}</div>
+
+<!-- Stacked View Container -->
+<div id="render-area" class="transliteration-container"></div>
+
+<!-- Dual Audio Container -->
+<div class="audio-container">
+    {{A_Sinhala_Male}} {{A_Sinhala_Female}}
+</div>
+
+<!-- Data Fields (Hidden) -->
+<div id="raw-word" style="display:none">{{Sinhala_Segmented}}</div>
+<div id="raw-ipa" style="display:none">{{IPA}}</div>
+
+<!-- Logic Script -->
+<script>
+(function() {
+    var wEl = document.getElementById("raw-word");
+    var iEl = document.getElementById("raw-ipa");
+    var container = document.getElementById("render-area");
+    
+    if (!wEl || !iEl || !container) return;
+    
+    var wRaw = wEl.innerText;
+    var iRaw = iEl.innerText;
+    
+    var wArr = wRaw.split(" | ");
+    var iArr = iRaw.split(" | ");
+    
+    var html = "";
+    var len = Math.min(wArr.length, iArr.length);
+    
+    for (var i = 0; i < len; i++) {
+        var w = wArr[i].trim();
+        var p = iArr[i].trim();
+        if (!w) continue;
+        
+        html += '<div class="word-pair">' + 
+                '<span class="word-top">' + w + '</span>' + 
+                '<span class="word-bottom">' + p + '</span>' + 
+                '</div>';
+    }
+    container.innerHTML = html;
+})();
+</script>

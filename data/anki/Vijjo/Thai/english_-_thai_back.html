@@ -1,0 +1,63 @@
+
+{{FrontSide}}
+
+<hr id=answer>
+
+
+<div class="thai-word">{{Thai}}</div>
+
+<!-- Render Container -->
+<div id="render-area" class="trans-container"></div>
+
+<div class="audio-container">{{A_Thai}}</div>
+
+<!-- Data Fields (Hidden) -->
+<div id="raw-thai" style="display:none">{{Thai_Segmented}}</div>
+<div id="raw-trans" style="display:none">{{Transliteration}}</div>
+
+<!-- Logic Script -->
+<script>
+(function() {
+    var thaiEl = document.getElementById("raw-thai");
+    var transEl = document.getElementById("raw-trans");
+    var container = document.getElementById("render-area");
+    
+    if (!thaiEl || !transEl || !container) return;
+    
+    var thaiRaw = thaiEl.innerText;
+    var transRaw = transEl.innerText;
+    
+    var thaiArr = thaiRaw.split(" | ");
+    var transArr = transRaw.split(" | ");
+    
+    function colorize(text) {
+        if (!text) return "";
+        return text.split(".").map(function(syl) {
+            var cls = "tm";
+            if (syl.indexOf("˥˩") !== -1) cls = "tf";
+            else if (syl.indexOf("˦˥") !== -1 || syl.indexOf("˥") !== -1) cls = "th";
+            else if (syl.indexOf("˩˩˦") !== -1 || syl.indexOf("˩˥") !== -1) cls = "tr";
+            else if (syl.indexOf("˩") !== -1 || syl.indexOf("˨˩") !== -1 || syl.indexOf("˨") !== -1) cls = "tl";
+            else if (syl.indexOf("˧") !== -1) cls = "tm";
+            return '<span class="' + cls + '">' + syl + '</span>';
+        }).join("");
+    }
+    
+    var html = "";
+    var len = Math.min(thaiArr.length, transArr.length);
+    
+    for (var i = 0; i < len; i++) {
+        var t = thaiArr[i].trim();
+        var p = transArr[i].trim();
+        if (!t) continue;
+        
+        // Special char check
+        if (t === p && /^[()/,]+$/.test(t)) {
+            html += '<div class="sp-char">' + t + '</div>';
+        } else {
+            html += '<div class="pair"><span class="t-seg">' + t + '</span><span class="p-seg">' + colorize(p) + '</span></div>';
+        }
+    }
+    container.innerHTML = html;
+})();
+</script>
